@@ -1,145 +1,590 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-
-<!-- #BeginTemplate "master.dwt" -->
-
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<!-- #BeginEditable "doctitle" -->
-<title>Мога ли да взема кредит</title>
-<!-- #EndEditable -->
-<link rel="stylesheet" type="text/css" title="CSS" href="styles/style1.css" media="screen" />
-<style type="text/css">
-.style1 {
-	color: #FF9900;
-}
-.style2 {
-	border-width: 0px;
-}
-.style4 {
-	text-align: center;
-}
-.style5 {
-	text-align: center;
-	margin-left: 0px;
-}
-.style6 {
-	text-align: center;
-	margin-right: 0px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РРїРѕС‚РµС‡РЅРё РєСЂРµРґРёС‚Рё - РњРѕРіР° Р»Рё РґР° РІР·РµРјР° РєСЂРµРґРёС‚?</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #3a7bd5;
+            --secondary-color: #00d2ff;
+            --accent-color: #3498db;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --bg-light: #f5f7fa;
+            --text-dark: #343a40;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+        
+        /* РќР°РІРёРіР°С†РёСЏ РєР°РєС‚Рѕ РІ index.html */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* РҐРµРґСЉСЂ СЃРµРєС†РёСЏ РєР°РєС‚Рѕ РІ index.html */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-hero {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hero:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        /* РћСЃС‚Р°РЅР°Р»Рё СЃС‚РёР»РѕРІРµ Р·Р° СЃСЉРґСЉСЂР¶Р°РЅРёРµС‚Рѕ */
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .calculator-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2c64b4;
+        }
+        
+        .comparison-table {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .bank-logo {
+            max-height: 40px;
+            width: auto;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(58, 123, 213, 0.1);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+        
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+        }
+        
+        .slider-value {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .bg-light-custom {
+            background-color: #f0f8ff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--dark-color);
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        .border-primary {
+            border-color: var(--primary-color) !important;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+        
+        .option-card {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            border-color: var(--primary-color);
+            background-color: #f8f9fa;
+        }
+        
+        .option-card.selected {
+            border-color: var(--primary-color);
+            background-color: #e8f4ff;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- РќР°РІРёРіР°С†РёСЏ РєР°РєС‚Рѕ РІ index.html -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                РњРѕРіР° Р»Рё РґР° РІР·РµРјР° РєСЂРµРґРёС‚?
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">РќР°С‡Р°Р»Рѕ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="IK.htm">РРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PK.htm">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cards.htm">РљСЂРµРґРёС‚РЅРё РєР°СЂС‚Рё</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Leasing.htm">Р›РёР·РёРЅРі</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="criterion/criterion.htm">РљСЂРµРґРёС‚РµРЅ СЂРµР№С‚РёРЅРі</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="relationships.htm">РџРѕР»РµР·РЅРё РєРѕРЅС‚Р°РєС‚Рё</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacts.htm">РџРёС€РµС‚Рµ РЅРё</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="style4">
+    <!-- РҐРµРґСЉСЂ СЃРµРєС†РёСЏ РєР°РєС‚Рѕ РІ index.html -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>РРїРѕС‚РµС‡РЅРё РєСЂРµРґРёС‚Рё</h1>
+            <p>РќР°РјРµСЂРµС‚Рµ РЅР°Р№-РґРѕР±СЂРёСЏ РёРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚ Р·Р° РІР°С€РёСЏ РґРѕРј СЃ РЅР°С€РёСЏ РёРЅС‚РµР»РёРіРµРЅС‚РµРЅ РєР°Р»РєСѓР»Р°С‚РѕСЂ Рё СЃСЉРІРµС‚Рё РѕС‚ РµРєСЃРїРµСЂС‚Рё</p>
+            <a href="#calculator" class="btn btn-hero">РР·С‡РёСЃР»РµС‚Рµ СЃРІРѕСЏ РєСЂРµРґРёС‚</a>
+        </div>
+    </section>
 
-<!-- Begin Container -->
-<div id="container">
-	<!-- Begin Masthead -->
-	<div id="masthead">
-		<h1><strong>Мога ли да взема кредит?!?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-		<span class="style1"><strong>
-		<a href="index.html">
-		<img src="images/home3.GIF" width="30" height="26" class="style2" /></a><a href="relationships.htm"><img src="images/Microsoft_Messenger_for_Mac_7_icon.png" width="30" height="26" class="style2" /></a></strong></span>
-		<img src="images/footer.jpg" width="702" height="137" style="float: left" /><img src="bag_of_money.png" width="133" height="145" style="float: left" /><a href="Contacts.htm"><img src="images/emailIcon.png" width="30" height="26" class="style2" /></a></div>
-	<!-- End Masthead -->
-	<!-- Begin Navigation -->
-	<div id="navigation">
-		<ul>
+    <!-- РћСЃРЅРѕРІРЅРё РїСЂРµРґРёРјСЃС‚РІР° -->
+    <section class="container mb-5">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold mb-3">Р—Р°С‰Рѕ РґР° РёР·Р±РµСЂРµС‚Рµ РёРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚?</h2>
+                <p class="text-muted">РРїРѕС‚РµС‡РЅРёС‚Рµ РєСЂРµРґРёС‚Рё РїСЂРµРґР»Р°РіР°С‚ РЅР°Р№-РґРѕР±СЂРёС‚Рµ СѓСЃР»РѕРІРёСЏ Р·Р° Р·Р°РєСѓРїСѓРІР°РЅРµ РЅР° РІР°С€РёСЏ РґРѕРј</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-house-door feature-icon"></i>
+                        <h4 class="card-title">Р’Р°С€РёСЏС‚ СЃРѕР±СЃС‚РІРµРЅ РґРѕРј</h4>
+                        <p class="card-text">Р РµР°Р»РёР·РёСЂР°Р№С‚Рµ РјРµС‡С‚Р°С‚Р° СЃРё Р·Р° СЃРѕР±СЃС‚РІРµРЅ РґРѕРј СЃ РёР·РіРѕРґРЅРё СѓСЃР»РѕРІРёСЏ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-graph-down feature-icon"></i>
+                        <h4 class="card-title">РќРёСЃРєРё Р»РёС…РІРё</h4>
+                        <p class="card-text">РќР°Р№-РЅРёСЃРєРёС‚Рµ Р»РёС…РІРµРЅРё РїСЂРѕС†РµРЅС‚Рё РЅР° РїР°Р·Р°СЂР° Р·Р° РґСЉР»РіРѕСЃСЂРѕС‡РЅРё РєСЂРµРґРёС‚Рё</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-calendar-check feature-icon"></i>
+                        <h4 class="card-title">Р”СЉР»РіРѕСЃСЂРѕС‡РЅРѕ РёР·РїР»Р°С‰Р°РЅРµ</h4>
+                        <p class="card-text">Р“СЉРІРєР°РІРё СЃСЂРѕРєРѕРІРµ Р·Р° РёР·РїР»Р°С‰Р°РЅРµ РґРѕ 30 РіРѕРґРёРЅРё</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<li class="style4"><b><a href="IK.htm" style="width: 154px">Ипотечен кредит</a></b></li>
-			<li class="style4"><b><a href="PK.htm" style="width: 212px">Потребителски кредит</a></b></li>
-			<li class="style5"><b><a href="Cards.htm" style="width: 166px">Кредитни карти</a></b></li>
-			<li style="width: 110px" class="style6"><b><a href="Leasing.htm">Лизинг</a></b></li>
-			<li style="width: 162px"><b><a href="criterion/criterion.htm">Кредитен рейтинг</a></b></li>
-			<li><br />
-			</li>
-		</ul>
-	</div>
-	<!-- End Navigation -->
-	<!-- Begin Page Content -->
-	<div id="page_content" style="left: 0px; top: 0px; height: 550px">
-		<!-- Begin Content -->
-		<div id="content" style="left: 0px; top: 0px; width: 841px; height: 500px;">
-			<!-- #BeginEditable "content" -->
-			<h2>Всичко за ипотечният кредит: лихви, видове и документи;</h2>
-			<p><a href="index.html"><strong>Начало</strong></a> >> <a href="IK.htm">
-			<strong>Ипотечен кредит</strong></a></p>
-			<form method="post">
-				<strong>
-				<textarea name="TextArea1" style="width: 800px; height: 290px">    * Ипотечен кредит с фиксирана лихва - при тях договорената лихва остава една и съща през целият период на изплащане, това в някой случай може да се окаже по изгодно , в други - не. Причина за това е, че движението на лихвените проценти за по-големи периоди от време, каквито са периодите на изплащане на един ипотечен кредит, не могат да се предвидят. Лихвеният процент може да се увеличи или спадне.
-    * Ипотечен кредит с нефиксирана, плаваща лихва - състои се от две части: фиксирана лихва + плаващ лихвен процент базиран на различни финансови индекси. При тази лихва можем да спестим известна сума при намаляване на плаващият лихвен процент, но е възможно и увеличение на цената, на ипотечния кредит, при процентно завишаване на базовите индекси.
-    * Ипотечен кредит с промоционална лихва - с доста ниска или нулева лихва за определен начален период - примерно 6 месеца, 1, 2 или повече години и с един от по-горните варианти за останалия период.
+    <!-- РљР°Р»РєСѓР»Р°С‚РѕСЂ -->
+    <section id="calculator" class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="calculator-card">
+                    <h2 class="text-center mb-4 fw-bold">РљР°Р»РєСѓР»Р°С‚РѕСЂ Р·Р° РёРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="propertyPrice" class="form-label fw-semibold">Р¦РµРЅР° РЅР° РёРјРѕС‚Р° (Р»РІ)</label>
+                                <input type="range" class="form-range" min="20000" max="1000000" step="10000" id="propertyPrice" oninput="updatePropertyValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>20 000 Р»РІ</span>
+                                    <span class="slider-value" id="propertyPriceValue">200 000 Р»РІ</span>
+                                    <span>1 000 000 Р»РІ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="downPayment" class="form-label fw-semibold">РЎР°РјРѕСѓС‡Р°СЃС‚РёРµ (%)</label>
+                                <input type="range" class="form-range" min="0" max="50" step="1" id="downPayment" oninput="updateDownPaymentValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>0%</span>
+                                    <span class="slider-value" id="downPaymentValue">20%</span>
+                                    <span>50%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="mortgageTerm" class="form-label fw-semibold">РЎСЂРѕРє РЅР° РєСЂРµРґРёС‚Р° (РіРѕРґРёРЅРё)</label>
+                                <input type="range" class="form-range" min="5" max="30" step="1" id="mortgageTerm" oninput="updateTermValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>5 РіРѕРґРёРЅРё</span>
+                                    <span class="slider-value" id="mortgageTermValue">20 РіРѕРґРёРЅРё</span>
+                                    <span>30 РіРѕРґРёРЅРё</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="interestRate" class="form-label fw-semibold">Р›РёС…РІР° (%)</label>
+                                <input type="range" class="form-range" min="1" max="10" step="0.1" id="interestRate" oninput="updateRateValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>1%</span>
+                                    <span class="slider-value" id="interestRateValue">4.2%</span>
+                                    <span>10%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card border-0 bg-light-custom">
+                                <div class="card-body text-center p-4">
+                                    <h5>Р’Р°С€Р°С‚Р° РјРµСЃРµС‡РЅР° РІРЅРѕСЃРєР°</h5>
+                                    <h2 class="text-primary my-3" id="monthlyPayment">984.50 Р»РІ</h2>
+                                    <div class="text-start">
+                                        <p class="mb-1"><i class="bi bi-arrow-right-circle me-2"></i>РЎСѓРјР° РЅР° РєСЂРµРґРёС‚Р°: <span id="loanAmount">160 000 Р»РІ</span></p>
+                                        <p class="mb-1"><i class="bi bi-arrow-right-circle me-2"></i>РћР±С‰Рѕ РґСЉР»Р¶РёРјР° СЃСѓРјР°: <span id="totalPayment">236 280 Р»РІ</span></p>
+                                        <p class="mb-0"><i class="bi bi-arrow-right-circle me-2"></i>РћР±С‰Рѕ Р»РёС…РІРё: <span id="totalInterest">76 280 Р»РІ</span></p>
+                                    </div>
+                                    <button class="btn btn-primary mt-4 px-4" onclick="calculateMortgage()">РџСЂРµРёР·С‡РёСЃР»Рё</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- РЎСЂР°РІРЅРµРЅРёРµ РЅР° Р±Р°РЅРєРё -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">РЎСЂР°РІРЅРµРЅРёРµ РЅР° РёРїРѕС‚РµС‡РЅРё РѕС„РµСЂС‚Рё</h2>
+        
+        <div class="table-responsive">
+            <table class="table table-hover comparison-table">
+                <thead>
+                    <tr>
+                        <th>Р‘Р°РЅРєР°</th>
+                        <th>Р›РёС…РІР°</th>
+                        <th>РњР°РєСЃ. С„РёРЅР°РЅСЃРёСЂР°РЅРµ</th>
+                        <th>РњР°РєСЃ. СЃСЂРѕРє</th>
+                        <th>РњРµСЃРµС‡РЅР° РІРЅРѕСЃРєР°*</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Р‘Р°РЅРєР°+1" alt="Р‘Р°РЅРєР° 1" class="bank-logo"></td>
+                        <td>3.9%</td>
+                        <td>90%</td>
+                        <td>30 РіРѕРґРёРЅРё</td>
+                        <td>942 Р»РІ</td>
+                        <td><button class="btn btn-sm btn-outline-primary">РљР°РЅРґРёРґР°С‚СЃС‚РІР°Р№</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Р‘Р°РЅРєР°+2" alt="Р‘Р°РЅРєР° 2" class="bank-logo"></td>
+                        <td>4.2%</td>
+                        <td>80%</td>
+                        <td>25 РіРѕРґРёРЅРё</td>
+                        <td>985 Р»РІ</td>
+                        <td><button class="btn btn-sm btn-outline-primary">РљР°РЅРґРёРґР°С‚СЃС‚РІР°Р№</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Р‘Р°РЅРєР°+3" alt="Р‘Р°РЅРєР° 3" class="bank-logo"></td>
+                        <td>4.5%</td>
+                        <td>85%</td>
+                        <td>30 РіРѕРґРёРЅРё</td>
+                        <td>1 013 Р»РІ</td>
+                        <td><button class="btn btn-sm btn-outline-primary">РљР°РЅРґРёРґР°С‚СЃС‚РІР°Р№</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-muted small mt-2">* РџСЂРёРјРµСЂ: 200 000 Р»РІ Р·Р° 20 РіРѕРґРёРЅРё СЃ 20% СЃР°РјРѕСѓС‡Р°СЃС‚РёРµ</p>
+    </section>
 
-Лихвите по ипотечните кредити варират според:
+    <!-- Р§РµСЃС‚Рѕ Р·Р°РґР°РІР°РЅРё РІСЉРїСЂРѕСЃРё -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">Р§РµСЃС‚Рѕ Р·Р°РґР°РІР°РЅРё РІСЉРїСЂРѕСЃРё</h2>
+        
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        РљР°РєРІР° Рµ РјРёРЅРёРјР°Р»РЅР°С‚Р° СЃСѓРјР° Р·Р° РёРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        РњРёРЅРёРјР°Р»РЅР°С‚Р° СЃСѓРјР° РІР°СЂРёСЂР° РјРµР¶РґСѓ Р±Р°РЅРєРёС‚Рµ, РЅРѕ РѕР±РёРєРЅРѕРІРµРЅРѕ Рµ РјРµР¶РґСѓ 10 000 Рё 20 000 Р»РІ.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        РљР°РєРІРѕ Рµ РЅРµРѕР±С…РѕРґРёРјРѕС‚Рѕ СЃР°РјРѕСѓС‡Р°СЃС‚РёРµ?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        РЎР°РјРѕСѓС‡Р°СЃС‚РёРµС‚Рѕ РѕР±РёРєРЅРѕРІРµРЅРѕ Рµ РјРµР¶РґСѓ 10% Рё 20% РѕС‚ С†РµРЅР°С‚Р° РЅР° РёРјРѕС‚Р°, РІ Р·Р°РІРёСЃРёРјРѕСЃС‚ РѕС‚ Р±Р°РЅРєР°С‚Р° Рё РєСЂРµРґРёС‚РЅР°С‚Р° РёСЃС‚РѕСЂРёСЏ РЅР° РєР»РёРµРЅС‚Р°.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        РљРѕР»РєРѕ РІСЂРµРјРµ РѕС‚РЅРµРјР° РѕРґРѕР±СЂРµРЅРёРµС‚Рѕ РЅР° РёРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚?
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        РџСЂРѕС†РµСЃСЉС‚ РЅР° РѕРґРѕР±СЂРµРЅРёРµ РѕР±РёРєРЅРѕРІРµРЅРѕ РѕС‚РЅРµРјР° РјРµР¶РґСѓ 2 Рё 4 СЃРµРґРјРёС†Рё, РІ Р·Р°РІРёСЃРёРјРѕСЃС‚ РѕС‚ СЃР»РѕР¶РЅРѕСЃС‚С‚Р° РЅР° СЃР»СѓС‡Р°СЏ Рё РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚С‚Р° РѕС‚ РѕС†РµРЅРєР° РЅР° РёРјРѕС‚Р°.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    * вида на имота;
-    * дохода на кредитоискателите;
-    * целта на ипотечния кредит;
-    * валутата в която се тегли кредита;
+    <!-- Р¤СѓС‚СЉСЂ -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>РњРѕРіР° Р»Рё РґР° РІР·РµРјР° РєСЂРµРґРёС‚?</h5>
+                    <p>РќР°РјРµСЂРµС‚Рµ РЅР°С-РґРѕР±СЂРёС‚Рµ РёРїРѕС‚РµС‡РЅРё РѕС„РµСЂС‚Рё РЅР° РїР°Р·Р°СЂР° Рё РёР·С‡РёСЃР»РµС‚Рµ СЃРІРѕСЏС‚Р° РјРµСЃРµС‡РЅР° РІРЅРѕСЃРєР°.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Р’СЂСЉР·РєРё</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">РќР°С‡Р°Р»Рѕ</a></li>
+                        <li><a href="IK.htm" class="text-white text-decoration-none">РРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚</a></li>
+                        <li><a href="PK.htm" class="text-white text-decoration-none">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚</a></li>
+                        <li><a href="Cards.htm" class="text-white text-decoration-none">РљСЂРµРґРёС‚РЅРё РєР°СЂС‚Рё</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>РљРѕРЅС‚Р°РєС‚Рё</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i> info@kredit.bg</li>
+                        <li><i class="bi bi-telephone me-2"></i> +359 888 123 456</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> РЎРѕС„РёСЏ, Р‘СЉР»РіР°СЂРёСЏ</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 РњРѕРіР° Р»Рё РґР° РІР·РµРјР° РєСЂРµРґРёС‚?. Р’СЃРёС‡РєРё РїСЂР°РІР° Р·Р°РїР°Р·РµРЅРё.</p>
+            </div>
+        </div>
+    </footer>
 
-
-Тези лихви започват от 6,29 % (при стандартни ипотечен кредит с фиксирана лихва в Евро ) и стигат до 12,99 % при кандидатстване за ипотечен кредит без доказване на доход . В някои банки предлагат така наречените “carry trade” ипотечни кредити в Швейцарски франкове, които кредити са на по ниски лихви в сравнение със стандатртните ипотечни кредити.
-
-
-Размера на ипотечните кредити зависи от вида на ипотекирания имота и в някои случаи от дохода на кредитоискаелите, като може да се стигне и до 100% финансиране при ипотекиране на новопостроен жилищен имот.
-
-
-Срока на ипотечните кредити варира от 1 до 35 години . Възрастта на кредитополучателя при изтичане на срока на кредита в повечето случаи не трябва да надхвърля 65- 70г.
-
-
-Видове ипотечни кредити
-
-    * Ипотечни кредити за покупка на жилище
-    * Ипотечни кредити за покупка на гараж самостоятелно или в комбинация с апартамент, къща или вила
-    * Ипотечни кредити за рефинансиране с цел окончателно погасяване на жилищен кредит, разрешен от друга банка, независимо от целта му – покупка, строителство,довършителни работи, ремонти, подобрения
-    * Ипотечни кредити за строителство на къща или вила и за завършване на степен „груб строеж” или окончателно завършване.
-    * Ипотечни кредити за довършителни работи на апартамент, къща, вила и прилежащ гараж (ако има такъв).
-    * Ипотечни кредити за подобрения на урегулирани поземлени имоти, предвидени за жилищно или вилно застрояване.
-    * Ипотечни кредити за подобрения на недвижими имоти - ремонт, преустройство, външно оформление, топлофициране, топлоизолиране, газификация, саниране и др.
-    * Ипотечни кредити за чуждестранни и български граждани, които живеят и работят извън България . Срока на кредитиране варира между 15 и 25 години . В зависимост от изискванията на банките някои от изискваните документи може да се ноложи да бъдат легализирани за да бъдат използувани за нуждите на банките.
-
-
-Стандартни документи изисквани при кандидадстване за ипотечен кредит
-
-    * Документи за доказване доходите на кредитоискателите желаещи да изтеглят ипотечен кредит
-    * Документи за собственост на недвижимия имот, приеман за обезпечение и/или предмет на сделка ;
-    * Документ за липса на тежести върху имота, предлаган като обезпечение по ипотечния кредит;
-    * Актуална скица, издадена от съответната община, за урегулирани поземлени имоти, къщи и вили с дворни места, а при необходимост и за други недвижими имоти.
-    * Удостоверение за актуално правно състояние на фирмата, удостоверение за липса на съдебно изпълнителни производства, удостоверение за наличие или липса на задължения на фирмата по чл. 87, ал. 6 от ДОПК- за кредитоискатели, упражняващи стопанска дейност.
-
-
-Банките може да изискват и други документи за , в зависимост от целта на ипотечния кредит или произтичащи от разпоредби на законови и подзаконови нормативни актове. 
-				
-				</textarea></strong></form>
-			
-		
-			
-			
-						<!-- #EndEditable --></div>
-		<!-- End Content -->
-		<!-- Begin Sidebar -->
-				<!-- End Sidebar --></div>
-	<!-- End Page Content -->
-	<!-- Begin Footer -->
-	<div id="footer" style="height: 31px">
-		<p><a href="index.html">Начало</a> | <a href="IK.htm">Ипотечен кредит</a> 
-		|
-		<a href="PK.htm">Потребителски кредит</a> | <a href="Cards.htm">
-		Кредитни карти</a> 
-		| <a href="Leasing.htm">Лизинг</a> |
-		<a href="criterion/criterion.htm">Кредитен рейтинг</a> |
-		<a href="Contacts.htm">Контакти</a></p>
-	</div>
-	<!-- End Footer --></div>
-<!-- End Container -->
-
-</div>
-
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РЅР° СЃС‚РѕР№РЅРѕСЃС‚РёС‚Рµ
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePropertyValue(200000);
+            updateDownPaymentValue(20);
+            updateTermValue(20);
+            updateRateValue(4.2);
+            calculateMortgage();
+        });
+        
+        // Р¤СѓРЅРєС†РёРё Р·Р° Р°РєС‚СѓР°Р»РёР·РёСЂР°РЅРµ РЅР° СЃС‚РѕР№РЅРѕСЃС‚РёС‚Рµ Р·Р° РёРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚
+        function updatePropertyValue(value) {
+            document.getElementById('propertyPriceValue').textContent = new Intl.NumberFormat('bg-BG').format(value) + ' Р»РІ';
+            calculateMortgage();
+        }
+        
+        function updateDownPaymentValue(value) {
+            document.getElementById('downPaymentValue').textContent = value + '%';
+            calculateMortgage();
+        }
+        
+        function updateTermValue(value) {
+            document.getElementById('mortgageTermValue').textContent = value + ' РіРѕРґРёРЅРё';
+            calculateMortgage();
+        }
+        
+        function updateRateValue(value) {
+            document.getElementById('interestRateValue').textContent = value + '%';
+            calculateMortgage();
+        }
+        
+        // Р¤СѓРЅРєС†РёСЏ Р·Р° РёР·С‡РёСЃР»РµРЅРёРµ РЅР° РёРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚
+        function calculateMortgage() {
+            const propertyPrice = document.getElementById('propertyPrice').value;
+            const downPaymentPercent = document.getElementById('downPayment').value;
+            const loanTerm = document.getElementById('mortgageTerm').value;
+            const interestRate = document.getElementById('interestRate').value;
+            
+            const downPaymentAmount = propertyPrice * (downPaymentPercent / 100);
+            const loanAmount = propertyPrice - downPaymentAmount;
+            const monthlyInterest = interestRate / 100 / 12;
+            const numberOfPayments = loanTerm * 12;
+            const monthlyPayment = loanAmount * monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments) / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
+            const totalPayment = monthlyPayment * numberOfPayments;
+            const totalInterest = totalPayment - loanAmount;
+            
+            document.getElementById('loanAmount').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(loanAmount) + ' Р»РІ';
+            document.getElementById('monthlyPayment').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(monthlyPayment) + ' Р»РІ';
+            document.getElementById('totalPayment').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(totalPayment) + ' Р»РІ';
+            document.getElementById('totalInterest').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(totalInterest) + ' Р»РІ';
+        }
+    </script>
 </body>
-
-<!-- #EndTemplate -->
-
 </html>

@@ -1,118 +1,415 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<!-- #BeginTemplate "master.dwt" -->
-
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<!-- #BeginEditable "doctitle" -->
-<title>Мога ли да взема кредит</title>
-<!-- #EndEditable -->
-<link rel="stylesheet" type="text/css" title="CSS" href="styles/style1.css" media="screen" />
-<style type="text/css">
-.style1 {
-	color: #FF9900;
-}
-.style2 {
-	border-width: 0px;
-}
-.style4 {
-	text-align: center;
-}
-.style5 {
-	text-align: center;
-	margin-left: 0px;
-}
-.style6 {
-	text-align: center;
-	margin-right: 0px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚Рё - РљСЂРµРґРёС‚РµРЅ РєР°Р»РєСѓР»Р°С‚РѕСЂ</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #3a7bd5;
+            --secondary-color: #00d2ff;
+            --accent-color: #3498db;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .calculator-card {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2c64b4, #00c1e6);
+            transform: translateY(-2px);
+        }
+        
+        .nav-pills .nav-link.active {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+        
+        .comparison-table {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .bank-logo {
+            max-height: 40px;
+            width: auto;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(58, 123, 213, 0.1);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- РќР°РІРёРіР°С†РёСЏ -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-cash-coin me-2"></i>РљСЂРµРґРёС‚РµРЅ РєР°Р»РєСѓР»Р°С‚РѕСЂ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">РќР°С‡Р°Р»Рѕ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="IK.htm">РРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="PK.htm">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cards.htm">РљСЂРµРґРёС‚РЅРё РєР°СЂС‚Рё</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Leasing.htm">Р›РёР·РёРЅРі</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="criterion/criterion.htm">РљСЂРµРґРёС‚РµРЅ СЂРµР№С‚РёРЅРі</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="relationships.htm">РџРѕР»РµР·РЅРё РєРѕРЅС‚Р°РєС‚Рё</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacts.htm">РџРёС€РµС‚Рµ РЅРё</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="style4">
+    <!-- РҐРµСЂРѕ СЃРµРєС†РёСЏ -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚Рё</h1>
+            <p class="lead mb-4">РќР°РјРµСЂРµС‚Рµ РЅР°Р№-РґРѕР±СЂРёСЏ РєСЂРµРґРёС‚ Р·Р° РІР°С€РёС‚Рµ РЅСѓР¶РґРё СЃ РЅР°С€РёСЏ РёРЅС‚РµР»РёРіРµРЅС‚РµРЅ РєР°Р»РєСѓР»Р°С‚РѕСЂ</p>
+            <a href="#calculator" class="btn btn-light btn-lg px-4 py-2 fw-bold">РР·С‡РёСЃР»РµС‚Рµ СЃРІРѕСЏ РєСЂРµРґРёС‚</a>
+        </div>
+    </section>
 
-<!-- Begin Container -->
-<div id="container">
-	<!-- Begin Masthead -->
-	<div id="masthead">
-		<h1><strong>Мога ли да взема кредит?!?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-		<span class="style1"><strong>
-		<a href="index.html">
-		<img src="images/home3.GIF" width="30" height="26" class="style2" /></a><a href="relationships.htm"><img src="images/Microsoft_Messenger_for_Mac_7_icon.png" width="30" height="26" class="style2" /></a></strong></span>
-		<img src="images/footer.jpg" width="702" height="137" style="float: left" /><img src="bag_of_money.png" width="133" height="145" style="float: left" /><a href="Contacts.htm"><img src="images/emailIcon.png" width="30" height="26" class="style2" /></a></div>
-	<!-- End Masthead -->
-	<!-- Begin Navigation -->
-	<div id="navigation">
-		<ul>
+    <!-- РћСЃРЅРѕРІРЅРё РїСЂРµРґРёРјСЃС‚РІР° -->
+    <section class="container mb-5">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold mb-3">Р—Р°С‰Рѕ РґР° РёР·Р±РµСЂРµС‚Рµ РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚?</h2>
+                <p class="text-muted">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРёС‚Рµ РєСЂРµРґРёС‚Рё РїСЂРµРґР»Р°РіР°С‚ РіСЉРІРєР°РІРѕСЃС‚ Рё Р±СЉСЂР·РёРЅР° Р·Р° СЂР°Р·РЅРѕРѕР±СЂР°Р·РЅРё Р»РёС‡РЅРё РЅСѓР¶РґРё</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-lightning-charge feature-icon"></i>
+                        <h4 class="card-title">Р‘СЉСЂР·Рѕ РѕРґРѕР±СЂРµРЅРёРµ</h4>
+                        <p class="card-text">РџРѕР»СѓС‡РµС‚Рµ СЂРµС€РµРЅРёРµ Р·Р° РІР°С€РёСЏ РєСЂРµРґРёС‚ РІ СЂР°РјРєРёС‚Рµ РЅР° С‡Р°СЃРѕРІРµ, Р° РЅРµ РґРЅРё</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-currency-exchange feature-icon"></i>
+                        <h4 class="card-title">РљРѕРЅРєСѓСЂРµРЅС‚РЅРё Р»РёС…РІРё</h4>
+                        <p class="card-text">РќР°Р№-РґРѕР±СЂРёС‚Рµ РѕС„РµСЂС‚Рё РЅР° РїР°Р·Р°СЂР° СЃ РїСЂРѕР·СЂР°С‡РЅРё СѓСЃР»РѕРІРёСЏ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-shield-check feature-icon"></i>
+                        <h4 class="card-title">РЎРёРіСѓСЂРЅРѕСЃС‚</h4>
+                        <p class="card-text">Р“РѕР»СЏРј РёР·Р±РѕСЂ РѕС‚ Р±Р°РЅРєРё Рё РєСЂРµРґРёС‚РЅРё РёРЅСЃС‚РёС‚СѓС†РёРё СЃ Р»РёС†РµРЅР·</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<li class="style4"><b><a href="IK.htm" style="width: 154px">Ипотечен кредит</a></b></li>
-			<li class="style4"><b><a href="PK.htm" style="width: 212px">Потребителски кредит</a></b></li>
-			<li class="style5"><b><a href="Cards.htm" style="width: 166px">Кредитни карти</a></b></li>
-			<li style="width: 110px" class="style6"><b><a href="Leasing.htm">Лизинг</a></b></li>
-			<li style="width: 162px"><b><a href="criterion/criterion.htm">Кредитен рейтинг</a></b></li>
-			<li><br />
-			</li>
-		</ul>
-	</div>
-	<!-- End Navigation -->
-	<!-- Begin Page Content -->
-	<div id="page_content" style="left: 0px; top: 0px; height: 550px">
-		<!-- Begin Content -->
-		<div id="content" style="left: 0px; top: 0px; width: 841px; height: 500px;">
-			<!-- #BeginEditable "content" -->
-			<h2>Всичко за потребителският кредит: размер, поръчители и 
-			документи;</h2>
-			<p><a href="index.html"><strong>Начало</strong></a> >> <a href="PK.htm">
-			<strong>Потребителски кредит</strong></a></p>
+    <!-- РљР°Р»РєСѓР»Р°С‚РѕСЂ -->
+    <section id="calculator" class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="calculator-card">
+                    <h2 class="text-center mb-4 fw-bold">РљР°Р»РєСѓР»Р°С‚РѕСЂ Р·Р° РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="loanAmount" class="form-label fw-semibold">РЎСѓРјР° РЅР° РєСЂРµРґРёС‚Р° (Р»РІ)</label>
+                                <input type="range" class="form-range" min="500" max="100000" step="500" id="loanAmount" oninput="updateLoanValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>500 Р»РІ</span>
+                                    <span id="loanAmountValue">25 000 Р»РІ</span>
+                                    <span>100 000 Р»РІ</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="loanTerm" class="form-label fw-semibold">РЎСЂРѕРє РЅР° РєСЂРµРґРёС‚Р° (РјРµСЃРµС†Рё)</label>
+                                <input type="range" class="form-range" min="6" max="120" step="6" id="loanTerm" oninput="updateTermValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>6 РјРµСЃРµС†Р°</span>
+                                    <span id="loanTermValue">60 РјРµСЃРµС†Р°</span>
+                                    <span>120 РјРµСЃРµС†Р°</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="interestRate" class="form-label fw-semibold">Р›РёС…РІР° (%)</label>
+                                <input type="range" class="form-range" min="1" max="20" step="0.1" id="interestRate" oninput="updateRateValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>1%</span>
+                                    <span id="interestRateValue">8.5%</span>
+                                    <span>20%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card border-0 bg-light">
+                                <div class="card-body text-center p-4">
+                                    <h5>Р’Р°С€Р°С‚Р° РјРµСЃРµС‡РЅР° РІРЅРѕСЃРєР°</h5>
+                                    <h2 class="text-primary my-3" id="monthlyPayment">328.50 Р»РІ</h2>
+                                    <div class="text-start">
+                                        <p class="mb-1"><i class="bi bi-arrow-right-circle me-2"></i>РћР±С‰Рѕ РґСЉР»Р¶РёРјР° СЃСѓРјР°: <span id="totalPayment">19 710 Р»РІ</span></p>
+                                        <p class="mb-0"><i class="bi bi-arrow-right-circle me-2"></i>РћР±С‰Рѕ Р»РёС…РІРё: <span id="totalInterest">4 710 Р»РІ</span></p>
+                                    </div>
+                                    <button class="btn btn-primary mt-4 px-4" onclick="calculateLoan()">РџСЂРµРёР·С‡РёСЃР»Рё</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<textarea name="TextArea1" style="width: 800px; height: 290px">
-    Потребителски кредити – най често исканите и отпускани кредити. Няколко са съществените характеристики на потребителските кредити, различаващи ги от Ипотечните.
+    <!-- РЎСЂР°РІРЅРµРЅРёРµ РЅР° Р±Р°РЅРєРё -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">РЎСЂР°РІРЅРµРЅРёРµ РЅР° РєСЂРµРґРёС‚РЅРё РѕС„РµСЂС‚Рё</h2>
+        
+        <div class="table-responsive">
+            <table class="table table-hover comparison-table">
+                <thead>
+                    <tr>
+                        <th>Р‘Р°РЅРєР°</th>
+                        <th>Р›РёС…РІР°</th>
+                        <th>РњР°РєСЃ. СЃСѓРјР°</th>
+                        <th>РњР°РєСЃ. СЃСЂРѕРє</th>
+                        <th>РњРµСЃРµС‡РЅР° РІРЅРѕСЃРєР°*</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Р‘Р°РЅРєР°+1" alt="Р‘Р°РЅРєР° 1" class="bank-logo"></td>
+                        <td>7.9%</td>
+                        <td>80 000 Р»РІ</td>
+                        <td>84 РјРµСЃРµС†Р°</td>
+                        <td>312 Р»РІ</td>
+                        <td><button class="btn btn-sm btn-outline-primary">РљР°РЅРґРёРґР°С‚СЃС‚РІР°Р№</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Р‘Р°РЅРєР°+2" alt="Р‘Р°РЅРєР° 2" class="bank-logo"></td>
+                        <td>8.2%</td>
+                        <td>60 000 Р»РІ</td>
+                        <td>60 РјРµСЃРµС†Р°</td>
+                        <td>305 Р»РІ</td>
+                        <td><button class="btn btn-sm btn-outline-primary">РљР°РЅРґРёРґР°С‚СЃС‚РІР°Р№</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Р‘Р°РЅРєР°+3" alt="Р‘Р°РЅРєР° 3" class="bank-logo"></td>
+                        <td>8.5%</td>
+                        <td>100 000 Р»РІ</td>
+                        <td>120 РјРµСЃРµС†Р°</td>
+                        <td>329 Р»РІ</td>
+                        <td><button class="btn btn-sm btn-outline-primary">РљР°РЅРґРёРґР°С‚СЃС‚РІР°Р№</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-muted small mt-2">* РџСЂРёРјРµСЂ: 25 000 Р»РІ Р·Р° 60 РјРµСЃРµС†Р°</p>
+    </section>
 
-    * По малкият размер на отпусканите средства – до 30 000 – 40 000 лв. максимална стойност
-    * По кратък срок на изплащане – максимума е между 10 и 15 години
-    * По високият лихвен процент – тук горната граница може да достигне и до 20-25%, а дори и повече ако става въпрос за някой видове покупки на лизинг
+    <!-- Р§РµСЃС‚Рѕ Р·Р°РґР°РІР°РЅРё РІСЉРїСЂРѕСЃРё -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">Р§РµСЃС‚Рѕ Р·Р°РґР°РІР°РЅРё РІСЉРїСЂРѕСЃРё</h2>
+        
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        РљР°РєРІРё РґРѕРєСѓРјРµРЅС‚Рё СЃР° РЅРµРѕР±С…РѕРґРёРјРё Р·Р° РєСЂРµРґРёС‚?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        РћР±РёРєРЅРѕРІРµРЅРѕ СЃРµ РёР·РёСЃРєРІР°С‚ Р»РёС‡РЅР° РєР°СЂС‚Р°, РґРѕРєР°Р·Р°С‚РµР»СЃС‚РІРѕ Р·Р° РґРѕС…РѕРґРё (Р·Р°РїР»Р°С‚Р° РёР»Рё РґР°РЅСЉС‡РЅР° РґРµРєР»Р°СЂР°С†РёСЏ), Рё РїРѕРЅСЏРєРѕРіР° РґРѕРєСѓРјРµРЅС‚Рё Р·Р° СЃРѕР±СЃС‚РІРµРЅРѕСЃС‚ РёР»Рё РґСЂСѓРіРё РѕР±РµР·РїРµС‡РµРЅРёСЏ.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        РљРѕР»РєРѕ РІСЂРµРјРµ РѕС‚РЅРµРјР° РѕРґРѕР±СЂРµРЅРёРµС‚Рѕ РЅР° РєСЂРµРґРёС‚?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Р’ РїРѕРІРµС‡РµС‚Рѕ СЃР»СѓС‡Р°Рё РѕРґРѕР±СЂРµРЅРёРµС‚Рѕ СЃС‚Р°РІР° РІ СЂР°РјРєРёС‚Рµ РЅР° 1-3 СЂР°Р±РѕС‚РЅРё РґРЅРё, РЅРѕ РїСЂРё РЅСЏРєРѕРё Р±Р°РЅРєРё РјРѕР¶Рµ РґР° Р±СЉРґРµ РґРѕ 7 СЂР°Р±РѕС‚РЅРё РґРЅРё.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        РњРѕРіР° Р»Рё РґР° РёР·РїР»Р°С‚СЏ РєСЂРµРґРёС‚Р° РїСЂРµРґСЃСЂРѕС‡РЅРѕ?
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Р”Р°, РїРѕРІРµС‡РµС‚Рѕ Р±Р°РЅРєРё РїРѕР·РІРѕР»СЏРІР°С‚ РїСЂРµРґСЃСЂРѕС‡РЅРѕ РёР·РїР»Р°С‰Р°РЅРµ, РЅРѕ РјРѕР¶Рµ РґР° РёРјР° С‚Р°РєСЃР° Р·Р° РїСЂРµРґСЃСЂРѕС‡РЅРѕ РїРѕРіР°СЃСЏРІР°РЅРµ. РџСЂРѕРІРµСЂРµС‚Рµ СѓСЃР»РѕРІРёСЏС‚Р° РЅР° РєРѕРЅРєСЂРµС‚РЅР°С‚Р° Р±Р°РЅРєР°.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Р¤СѓС‚СЉСЂ -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>РљСЂРµРґРёС‚РµРЅ РєР°Р»РєСѓР»Р°С‚РѕСЂ</h5>
+                    <p>РќР°РјРµСЂРµС‚Рµ РЅР°Р№-РґРѕР±СЂРёС‚Рµ РєСЂРµРґРёС‚РЅРё РѕС„РµСЂС‚Рё РЅР° РїР°Р·Р°СЂР° Рё РёР·С‡РёСЃР»РµС‚Рµ СЃРІРѕСЏС‚Р° РјРµСЃРµС‡РЅР° РІРЅРѕСЃРєР°.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Р’СЂСЉР·РєРё</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">РќР°С‡Р°Р»Рѕ</a></li>
+                        <li><a href="IK.htm" class="text-white text-decoration-none">РРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚</a></li>
+                        <li><a href="PK.htm" class="text-white text-decoration-none">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚</a></li>
+                        <li><a href="Cards.htm" class="text-white text-decoration-none">РљСЂРµРґРёС‚РЅРё РєР°СЂС‚Рё</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>РљРѕРЅС‚Р°РєС‚Рё</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i> info@kreditkalkulator.bg</li>
+                        <li><i class="bi bi-telephone me-2"></i> +359 888 123 456</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> РЎРѕС„РёСЏ, Р‘СЉР»РіР°СЂРёСЏ</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 РљСЂРµРґРёС‚РµРЅ РєР°Р»РєСѓР»Р°С‚РѕСЂ. Р’СЃРёС‡РєРё РїСЂР°РІР° Р·Р°РїР°Р·РµРЅРё.</p>
+            </div>
+        </div>
+    </footer>
 
-Тук обезпечението не е недвижима собственост, което определя по високия риск за банковите институции при отпускането на такъв тип кредити. Което води до по-високите лихвени проценти.
-Според типа кредита може да бъде :
-
-    * Потребителски кредит с поръчители – с един или няколко поръчители които гарантират за лицето кандидатстващо за кредит. В повечето случаи поръчителите трябва да отговарят на определени условия според възраст (Сбора на възрастта и срока на кредита да не надхвърлят 60 години за жени и 65 години за мъже.), тип заетост(обикновено безсрочен трудов договор), месечен доход, други кредитни задължения. Кредитите с поръчители обикновено са с по ниски лихви от тези без поръчител, но изискват повече документация, поръчителят се ангажира също с представянето на документи за доходи, задължения, заетост и т.н., с което процедурата се усложнява. Използвайки формата за кандидатстване от нашият сайт ще спестите голяма част от времето на себе си и евентуалните поръчители, тъй като ще получите готови предложения за кредит съобразени с Вашите и на поръчителя възможности.
-    * Потребителски кредит без поръчители – разликата тук е че нямате нужда от поръчители, но за сметка на това лихвите са по високи. Условията за възраст, тип заетост и месечен доход остават.
-    * Потребителски кредит срещу залог на парични средства или държавни ценни книжа – най лесен за вземане и евтин за изплащане, доста непопулярен в България. Кредитът се обезпечава със залог на парични средства в национална и чуждестранна валута, блокирани в банката по разплащателни или депозитни сметки. Обезпечителният марж обикновено е в размер на 10 на сто от размера на предоставения кредит.
-    * Потребителски кредити за свободни професии - кредитите са предназначени за лекари, зъболекари, фармацевти, адвокати, нотариуси, експерт- счетоводители, архитекти, проектанти и други работещи на свободна практика. Като гаранции са встъпване в дълга на съпруга или съпругата (за ЕТ) или съдружниците.
-
-
-Голяма част от банките предоставят потребителски кредити по специални програми обвързани с фирми и работодатели, държавни учреждения и организации които гарантират за служителите си и са предварително одобрени от банките. В повечето случаи тези кредити са по лесни за отпускане, с по ниски лихвени проценти и улеснена процедура. Често условие е задължителен превод на работната заплата по сметка в банката отпускаща кредита. Така че преди да кандидатствате за кредит проверете във фирмата или предприятието където работите за наличието на такива програми.
-
-Много добра практика е банките да сключват и задължителна застраховка живот при отпускане на кредит, като в повечето случаи цента на застраховката е включена в цената на кредита.
-			</textarea>
-					
-									
-						<!-- #EndEditable --></div>
-		<!-- End Content -->
-		<!-- Begin Sidebar -->
-				<!-- End Sidebar --></div>
-	<!-- End Page Content -->
-	<!-- Begin Footer -->
-	<div id="footer" style="height: 31px">
-		<p><a href="index.html">Начало</a> | <a href="IK.htm">Ипотечен кредит</a> 
-		|
-		<a href="PK.htm">Потребителски кредит</a> | <a href="Cards.htm">
-		Кредитни карти</a> 
-		| <a href="Leasing.htm">Лизинг</a> |
-		<a href="criterion/criterion.htm">Кредитен рейтинг</a> |
-		<a href="Contacts.htm">Контакти</a></p>
-	</div>
-	<!-- End Footer --></div>
-<!-- End Container -->
-
-</div>
-
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РЅР° СЃС‚РѕР№РЅРѕСЃС‚РёС‚Рµ
+        document.addEventListener('DOMContentLoaded', function() {
+            updateLoanValue(25000);
+            updateTermValue(60);
+            updateRateValue(8.5);
+            calculateLoan();
+        });
+        
+        // Р¤СѓРЅРєС†РёРё Р·Р° Р°РєС‚СѓР°Р»РёР·РёСЂР°РЅРµ РЅР° СЃС‚РѕР№РЅРѕСЃС‚РёС‚Рµ
+        function updateLoanValue(value) {
+            document.getElementById('loanAmountValue').textContent = new Intl.NumberFormat('bg-BG').format(value) + ' Р»РІ';
+            calculateLoan();
+        }
+        
+        function updateTermValue(value) {
+            document.getElementById('loanTermValue').textContent = value + ' РјРµСЃРµС†Р°';
+            calculateLoan();
+        }
+        
+        function updateRateValue(value) {
+            document.getElementById('interestRateValue').textContent = value + '%';
+            calculateLoan();
+        }
+        
+        // Р¤СѓРЅРєС†РёСЏ Р·Р° РёР·С‡РёСЃР»РµРЅРёРµ РЅР° РєСЂРµРґРёС‚Р°
+        function calculateLoan() {
+            const loanAmount = document.getElementById('loanAmount').value;
+            const loanTerm = document.getElementById('loanTerm').value;
+            const interestRate = document.getElementById('interestRate').value;
+            
+            const monthlyInterest = interestRate / 100 / 12;
+            const monthlyPayment = loanAmount * monthlyInterest * Math.pow(1 + monthlyInterest, loanTerm) / (Math.pow(1 + monthlyInterest, loanTerm) - 1);
+            const totalPayment = monthlyPayment * loanTerm;
+            const totalInterest = totalPayment - loanAmount;
+            
+            document.getElementById('monthlyPayment').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(monthlyPayment) + ' Р»РІ';
+            document.getElementById('totalPayment').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(totalPayment) + ' Р»РІ';
+            document.getElementById('totalInterest').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(totalInterest) + ' Р»РІ';
+        }
+    </script>
 </body>
-
-<!-- #EndTemplate -->
-
 </html>

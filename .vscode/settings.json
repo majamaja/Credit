@@ -1,4 +1,4 @@
-{
-     // Set file encoding to UTF-8 to support Cyrillic alphabet
-    "files.encoding": "windows1251"
-}
+//    {
+// //         // Set file encoding to UTF-8 to support Cyrillic alphabet
+//       "files.encoding": "windows1251"
+// }
