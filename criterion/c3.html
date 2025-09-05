@@ -1,183 +1,288 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<!-- #BeginTemplate "../master.dwt" -->
-
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<!-- #BeginEditable "doctitle" -->
-<title>���� �� �� ����� ������</title>
-<style type="text/css">
-.style3 {
-	text-align: center;
-}
-.style4 {
-	margin-left: 0px;
-}
-</style>
-<!-- #EndEditable -->
-<link rel="stylesheet" type="text/css" title="CSS" href="../styles/style1.css" media="screen" />
-<style type="text/css">
-.style1 {
-	color: #FF9900;
-}
-.style2 {
-	border-width: 0px;
-}
-.style4 {
-	text-align: center;
-}
-.style5 {
-	text-align: center;
-	margin-left: 0px;
-}
-.style6 {
-	text-align: center;
-	margin-right: 0px;
-}
-</style>
-   <script>
-    function sendValue() {
-	const params = new URLSearchParams(window.location.search);
-	const passedValue = params.get("c2-1");
-        const selectedValue = document.querySelector('input[name="c3"]:checked');
-        if (selectedValue) {
-            const value = selectedValue.value;
-            window.location.href = `c4.html?c3=${encodeURIComponent(Number(value) + Number(passedValue))}`;
-
-        } else {
-				const errorDiv = document.createElement('div');
-   	 errorDiv.innerHTML = `
-      <div style="
-        position: fixed;
-        top: 420px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #ffebee;
-        color: #b71c1c;
-        padding: 15px;
-        border-radius: 4px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        z-index: 10000;
-      ">
-       ����, �������� ����� � ������ ����������� ����� �� ����������.
-      </div>
-    `;
-    
-    document.body.appendChild(errorDiv);
-    // Auto-remove after 3 seconds
-    setTimeout(() => errorDiv.remove(), 3000);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стъпка 3 - Кредитен калкулатор</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .navbar-dark.bg-dark {
+            background-color: #343a40 !important;
         }
-    }
-
-</script>
+        .progress-container {
+            margin: 2rem 0;
+        }
+        .question-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .option-card {
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .option-card:hover {
+            border-color: #0d6efd;
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        .option-card.selected {
+            border-color: #0d6efd;
+            background-color: #e8f4ff;
+        }
+        .btn-next {
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+        .flag-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #6f42c1;
+        }
+        .eu-flag {
+            width: 30px;
+            height: 20px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="style4">
+    <!-- Навигация (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Мога ли да взема кредит?!?</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Начало</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../IK.htm">Ипотечен кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../PK.htm">Потребителски кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Cards.htm">Кредитни карти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Leasing.htm">Лизинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="criterion.htm">Кредитен рейтинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../relationships.htm">Полезни контакти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Contacts.htm">Пишете ни</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Begin Container -->
-<div id="container">
-	<!-- Begin Masthead -->
-	<div id="masthead">
-		<h1><strong>���� �� �� ����� ������?!?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-		<span class="style1"><strong>
-		<a href="../index.html">
-		<img src="../images/home3.GIF" width="30" height="26" class="style2" /></a><a href="../relationships.htm"><img src="../images/Microsoft_Messenger_for_Mac_7_icon.png" width="30" height="26" class="style2" /></a></strong></span>
-		<img src="../images/footer.jpg" width="702" height="137" style="float: left" /><img src="../bag_of_money.png" width="133" height="145" style="float: left" /><a href="../Contacts.htm"><img src="../images/emailIcon.png" width="30" height="26" class="style2" /></a></div>
-	<!-- End Masthead -->
-	<!-- Begin Navigation -->
-	<div id="navigation">
-		<ul>
+    <!-- Прогрес бар -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <small>Стъпка 3 от 12</small>
+                <small>25% завършено</small>
+            </div>
+            <div class="progress" style="height: 10px;">
+                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
 
-			<li class="style4"><b><a href="../IK.htm" style="width: 154px">�������� ������</a></b></li>
-			<li class="style4"><b><a href="../PK.htm" style="width: 212px">������������� ������</a></b></li>
-			<li class="style5"><b><a href="../Cards.htm" style="width: 166px">�������� �����</a></b></li>
-			<li style="width: 110px" class="style6"><b><a href="../Leasing.htm">������</a></b></li>
-			<li style="width: 162px"><b><a href="criterion.htm">�������� �������</a></b></li>
-			<li><br />
-			</li>
-		</ul>
-	</div>
-	<!-- End Navigation -->
-	<!-- Begin Page Content -->
-	<div id="page_content" style="left: 0px; top: 0px; height: 550px">
-		<!-- Begin Content -->
-		<div id="content" style="left: 0px; top: 0px; width: 841px; height: 500px;">
-			<!-- #BeginEditable "content" -->
-			<br/>
-			<h2>�������� ����� � ������ ����������� :</h2>
-		<form onsubmit="event.preventDefault(); sendValue();">
+    <!-- Основно съдържание -->
+    <main class="container mb-5">
+        
+        <!-- "breadcrumb" навигация -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Начало</a></li>
+                <li class="breadcrumb-item"><a href="criterion.htm">Кредитен рейтинг</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Стъпка 3</li>
+            </ol>
+        </nav>
 
-		
-		<table style="width: 100%">
-			<tr>
-				<td style="width: 330px">
-				<input type="radio" name="c3" value="1"/>&nbsp; �� ������ �� �� <br />
-				<input type="radio" name="c3" value="-2"/>&nbsp; �� ����� ������<br /><br /> 
-				<input type="submit" value="next" style="width: 120px; height: 30px; background-color:#FF6600  "/>
-				<br />
-				<br/>
-				</td>
-				<td class="style3">
-				<img src="../images/European_Union_(blue).svg.png" width="409" height="344" style="float: left" class="style4" />&nbsp;</td>
-			</tr>
-		</table>
-		
-		
-	
-
-
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-		<br />
-
-			<br />
-		<br />
-
-			</form>
-			
-			
-						<!-- #EndEditable --></div>
-		<!-- End Content -->
-		<!-- Begin Sidebar -->
-				<!-- End Sidebar --></div>
-	<!-- End Page Content -->
-	<!-- Begin Footer -->
-	<div id="footer" style="height: 31px">
-		<p><a href="../index.html">������</a> | <a href="../IK.htm">�������� ������</a> 
-		|
-		<a href="../PK.htm">������������� ������</a> | <a href="../Cards.htm">
-		�������� �����</a> 
-		| <a href="../Leasing.htm">������</a> |
-		<a href="criterion.htm">�������� �������</a> |
-		<a href="../Contacts.htm">��������</a></p>
-	</div>
-	<!-- End Footer --></div>
-<!-- End Container -->
-
+        <!-- Въпрос -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card question-card">
+                    <div class="card-header bg-primary text-white text-center py-3">
+                        <h4 class="card-title mb-0"><i class="bi bi-globe me-2"></i>Гражданство</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title mb-4">Моля, посочете вашето гражданство:</h5>
+                        
+<!-- Опции за избор -->
+<div class="option-card" onclick="selectOption(1)">
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="citizenshipOption" id="option1" value="1">
+    <label class="form-check-label fw-bold" for="option1">
+      <span style="
+        background: linear-gradient(to bottom, #ffffff 0%, #ffffff 33%, #00966E 33%, #00966E 66%, #D62612 66%, #D62612 100%);
+        width: 30px;
+        height: 20px;
+        display: inline-block;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        vertical-align: middle;
+      "></span>
+      Българско
+    </label>
+    <p class="text-muted mb-0 mt-1">Гражданин на Република България</p>
+  </div>
 </div>
 
+                            
+                            <div class="option-card" onclick="selectOption(2)">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="citizenshipOption" id="option2" value="1">
+                                    <label class="form-check-label fw-bold" for="option2">
+                                        <img src="../images/European_Union_(blue).svg.png" class="eu-flag" alt="ЕС">
+                                        Друга страна от ЕС
+                                    </label>
+                                    <p class="text-muted mb-0 mt-1">Гражданин на страна членка на Европейския съюз</p>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card" onclick="selectOption(3)">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="citizenshipOption" id="option3" value="-2">
+                                    <label class="form-check-label fw-bold" for="option3">
+                                        <i class="bi bi-globe-americas flag-icon"></i>От трета страна
+                                    </label>
+                                    <p class="text-muted mb-0 mt-1">Гражданин на страна извън Европейския съюз</p>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <!-- Бутон за напред -->
+                        <div class="text-center mt-4">
+                            <button type="button" class="btn btn-primary btn-next" onclick="validateForm()">
+                                Следваща стъпка <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Помощна информация -->
+                <div class="card mt-4 border-0 bg-light">
+                    <div class="card-body">
+                        <h6><i class="bi bi-info-circle text-primary me-2"></i>Защо ни е нужна тази информация?</h6>
+                        <p class="small mb-0">Гражданството влияе на правния статут и достъпа до банкови услуги. Гражданите на ЕС имат еднакви права в рамките на съюза, докато гражданите на трети страни може да са subject на допълнителни изисквания и проверки при кандидатстване за кредит.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Футър -->
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">
+                <a href="../index.html" class="text-light text-decoration-none">Начало</a> | 
+                <a href="../IK.htm" class="text-light text-decoration-none">Ипотечен кредит</a> | 
+                <a href="../PK.htm" class="text-light text-decoration-none">Потребителски кредит</a> | 
+                <a href="../Cards.htm" class="text-light text-decoration-none">Кредитни карти</a> | 
+                <a href="../Leasing.htm" class="text-light text-decoration-none">Лизинг</a> | 
+                <a href="criterion.htm" class="text-light text-decoration-none">Кредитен рейтинг</a> | 
+                <a href="../Contacts.htm" class="text-light text-decoration-none">Контакти</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript за функционалността -->
+    <script>
+        // Функция за избор на опция
+        function selectOption(optionNumber) {
+            // Маркиране на радио бутона
+            document.getElementById('option' + optionNumber).checked = true;
+            
+            // Премахване на селектиран стил от всички опции
+            const allOptions = document.querySelectorAll('.option-card');
+            allOptions.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Добавяне на селектиран стил към избраната опция
+            const selectedOption = document.querySelector('.option-card:nth-child(' + optionNumber + ')');
+            if (selectedOption) {
+                selectedOption.classList.add('selected');
+            }
+        }
+        
+        // Функция за валидация на формата
+        function validateForm() {
+            const selectedOption = document.querySelector('input[name="citizenshipOption"]:checked');
+            
+            if (!selectedOption) {
+                // Показване на съобщение за грешка
+                showError('Моля, изберете вашето гражданство преди да продължите.');
+                return;
+            }
+            
+            // Вземане на стойността от предишните страници
+            const urlParams = new URLSearchParams(window.location.search);
+            const previousValue = urlParams.get('c2-1') || '0';
+            
+            // Изчисляване на общия резултат
+            const totalScore = parseInt(previousValue) + parseInt(selectedOption.value);
+            
+            // Пренасочване към следващата страница
+            window.location.href = 'c4.html?c3=' + encodeURIComponent(totalScore);
+        }
+
+        // Функция за показване на грешка
+        function showError(message) {
+            // Премахване на стари съобщения за грешка
+            const oldAlerts = document.querySelectorAll('.alert');
+            oldAlerts.forEach(alert => alert.remove());
+            
+            // Създаване на ново съобщение за грешка
+            const errorDiv = document.createElement('div');
+            errorDiv.innerHTML = `
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    <strong>${message}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+            document.querySelector('.card-body').appendChild(errorDiv);
+            
+            // Скролване към съобщението за грешка
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // Добавяне на клавишни събития
+        document.addEventListener('keydown', function(event) {
+            if (event.key >= '1' && event.key <= '3') {
+                selectOption(parseInt(event.key));
+            } else if (event.key === 'Enter') {
+                validateForm();
+            }
+        });
+    </script>
 </body>
-
-<!-- #EndTemplate -->
-
 </html>

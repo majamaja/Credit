@@ -1,157 +1,117 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
-
-<!-- #BeginTemplate "../master.dwt" -->
-
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<!-- #BeginEditable "doctitle" -->
-<title>Мога ли да взема кредит</title>
-<!-- #EndEditable -->
-<link rel="stylesheet" type="text/css" title="CSS" href="../styles/style1.css" media="screen" />
-<style type="text/css">
-.style1 {
-	color: #FF9900;
-}
-.style2 {
-	border-width: 0px;
-}
-.style4 {
-	text-align: center;
-}
-.style5 {
-	text-align: center;
-	margin-left: 0px;
-}
-.style6 {
-	text-align: center;
-	margin-right: 0px;
-}
-</style>
-   <script>
-    function sendValue() {
-        const selectedValue = document.querySelector('input[name="c0"]:checked');
-        if (selectedValue) {
-            const value = selectedValue.value;
-            window.location.href = `c1.html?c0=${encodeURIComponent(value)}`;
-        } else {
-            const errorDiv = document.createElement('div');
-   	 errorDiv.innerHTML = `
-      <div style="
-        position: fixed;
-        top: 420px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #ffebee;
-        color: #b71c1c;
-        padding: 15px;
-        border-radius: 4px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        z-index: 10000;
-      ">
-        Моля, изберете възрастова група преди да продължите.
-      </div>
-    `;
-    
-    document.body.appendChild(errorDiv);
-    // Auto-remove after 3 seconds
-    setTimeout(() => errorDiv.remove(), 3000);
-        }
-    }
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>РњРѕРіР° Р»Рё РґР° РІР·РµРјР° РєСЂРµРґРёС‚?</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<body class="d-flex flex-column min-vh-100">
 
-<body>
+<!-- РќР°РІРёРіР°С†РёСЏ -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">РњРѕРіР° Р»Рё РґР° РІР·РµРјР° РєСЂРµРґРёС‚?</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="IK.html">РРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚</a></li>
+        <li class="nav-item"><a class="nav-link" href="PK.html">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚</a></li>
+        <li class="nav-item"><a class="nav-link" href="Cards.html">РљСЂРµРґРёС‚РЅРё РєР°СЂС‚Рё</a></li>
+        <li class="nav-item"><a class="nav-link" href="Leasing.html">Р›РёР·РёРЅРі</a></li>
+        <li class="nav-item"><a class="nav-link" href="criterion.html">РљСЂРµРґРёС‚РµРЅ СЂРµР№С‚РёРЅРі</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contacts.html">РљРѕРЅС‚Р°РєС‚Рё</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-<div class="style4">
+<!-- Hero СЃРµРєС†РёСЏ -->
+<header class="bg-light py-5 text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-3">РњРѕРіР° Р»Рё РґР° РІР·РµРјР° РєСЂРµРґРёС‚?</h1>
+    <p class="lead mb-4">РџСЂРѕРІРµСЂРµС‚Рµ СЃРІРѕСЏС‚Р° РєСЂРµРґРёС‚РѕСЃРїРѕСЃРѕР±РЅРѕСЃС‚ Рё РѕС‚РєСЂРёР№С‚Рµ РЅР°Р№-РїРѕРґС…РѕРґСЏС‰РёСЏ С„РёРЅР°РЅСЃРѕРІ РїСЂРѕРґСѓРєС‚ Р·Р° РІР°СЃ.</p>
+    <a href="criterion.html" class="btn btn-primary btn-lg">РџСЂРѕРІРµСЂРё РєСЂРµРґРёС‚РЅРёСЏ СЂРµР№С‚РёРЅРі</a>
+  </div>
+</header>
 
-<!-- Begin Container -->
-<div id="container">
-	<!-- Begin Masthead -->
-	<div id="masthead">
-		<h1><strong>Мога ли да взема кредит?!?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-		<span class="style1"><strong>
-		<a href="../index.htm">
-		<img src="../images/home3.GIF" width="30" height="26" class="style2" /></a><a href="../relationships.htm"><img src="../images/Microsoft_Messenger_for_Mac_7_icon.png" width="30" height="26" class="style2" /></a></strong></span>
-		<img src="../images/footer.jpg" width="702" height="137" style="float: left" /><img src="../bag_of_money.png" width="133" height="145" style="float: left" /><a href="../Contacts.htm"><img src="../images/emailIcon.png" width="30" height="26" class="style2" /></a></div>
-	<!-- End Masthead -->
-	<!-- Begin Navigation -->
-	<div id="navigation">
-		<ul>
-
-			<li class="style4"><b><a href="../IK.htm" style="width: 154px">Ипотечен кредит</a></b></li>
-			<li class="style4"><b><a href="../PK.htm" style="width: 212px">Потребителски кредит</a></b></li>
-			<li class="style5"><b><a href="../Cards.htm" style="width: 166px">Кредитни карти</a></b></li>
-			<li style="width: 110px" class="style6"><b><a href="../Leasing.htm">Лизинг</a></b></li>
-			<li style="width: 162px"><b><a href="criterion.htm">Кредитен рейтинг</a></b></li>
-			<li><br />
-			</li>
-		</ul>
-	</div>
-	<!-- End Navigation -->
-	<!-- Begin Page Content -->
-	<div id="page_content" style="left: 0px; top: 0px; height: 550px">
-		<!-- Begin Content -->
-		<div id="content" style="left: 0px; top: 0px; width: 841px; height: 500px;">
-			<!-- #BeginEditable "content" -->
-			<br/>
-			<h2>Посочете в коя възрастова група сте:</h2>
-			<form  onsubmit="event.preventDefault(); sendValue();">
-				<label><input type="radio" name="c0" value="-1"/><span lang="en-us">&nbsp;</span>18 г. – 24 г.<br/></label>
-				<label><input type="radio" name="c0" value="1"/><span lang="en-us">&nbsp;</span>24 г. – 34 г.<br/></label>
-				<label><input type="radio" name="c0" value="1"/><span lang="en-us">&nbsp;</span>35 г. – 54 г.<br/></label>
-				<label><input type="radio" name="c0" value="2"/><span lang="en-us">&nbsp;</span>55 г.– 64 г.<br/></label>
-				<label>	<input type="radio" name="c0" value="1"/><span lang="en-us">&nbsp;</span>над 65 г.<br/></label>
-				<table style="width: 100%">
-				<tr>
-					<td>
-					<p align="justify">Възрастта е първият решаващ критерий за определяне на кредитоспособността в смисъл 
-					за оптималното използване на деловите способности на кредитоискателя. Ако той не е пълнолетен т.е. не е навършил 
-					18 г. (за различните държави съответната законово установена 
-					възраст), то той не е кредитоспособен. Искане за кредит от 
-					непълнолетен кредитоискател трябва да се отхвърли (в случая 
-					не се вземат под внимание изключенията). Ако 
-					кредитоискателят е над 65-годишен, то това трябва да бъде 
-					предупредителен сигнал и да доведе до индивидуално 
-					разглеждане на обстоятелствата. Най-общо се 
-					приема, че с увеличаване на възрастта готовността да се 
-					поемат рискове намалява. Същевременно по-възрастните 
-					кредитополучатели притежават по-високи доходи и имущество. 
-					Също така трябва да се вземе предвид, че с увеличаване на 
-					възрастта се повишава и биологичният риск. </p></td>
-				</tr>
-			</table>
-<input type="submit" value="next" style="width: 120px; height: 30px; background-color:#FF6600"/>
-<input type="hidden" value=""/>
-
-			<br />
-		<br />
-
-			</form>
-			
-			
-						<!-- #EndEditable --></div>
-		<!-- End Content -->
-		<!-- Begin Sidebar -->
-				<!-- End Sidebar --></div>
-	<!-- End Page Content -->
-	<!-- Begin Footer -->
-	<div id="footer" style="height: 31px">
-		<p><a href="../index.html">Начало</a> | <a href="../IK.htm">Ипотечен кредит</a> 
-		|
-		<a href="../PK.htm">Потребителски кредит</a> | <a href="../Cards.htm">
-		Кредитни карти</a> 
-		| <a href="../Leasing.htm">Лизинг</a> |
-		<a href="criterion.htm">Кредитен рейтинг</a> |
-		<a href="../Contacts.htm">Контакти</a></p>
-	</div>
-	<!-- End Footer --></div>
-<!-- End Container -->
-
+<!-- Р’РёРґРѕРІРµ РєСЂРµРґРёС‚Рё -->
+<div class="container my-5">
+  <div class="row text-center g-4">
+    <div class="col-md-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">РРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚</h5>
+          <p class="card-text">Р¤РёРЅР°РЅСЃРёСЂР°РЅРµ Р·Р° РїРѕРєСѓРїРєР° РёР»Рё СЂРµРјРѕРЅС‚ РЅР° Р¶РёР»РёС‰Рµ РїСЂРё РёР·РіРѕРґРЅРё СѓСЃР»РѕРІРёСЏ.</p>
+          <a href="IK.html" class="btn btn-outline-primary">Р’РёР¶ РїРѕРІРµС‡Рµ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚</h5>
+          <p class="card-text">РљСЂРµРґРёС‚ Р·Р° Р»РёС‡РЅРё РЅСѓР¶РґРё вЂ“ Р±СЉСЂР· РґРѕСЃС‚СЉРї РґРѕ СЃСЂРµРґСЃС‚РІР° Р·Р° РІР°Р¶РЅРё РїРѕРєСѓРїРєРё.</p>
+          <a href="PK.html" class="btn btn-outline-primary">Р’РёР¶ РїРѕРІРµС‡Рµ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">РљСЂРµРґРёС‚РЅРё РєР°СЂС‚Рё</h5>
+          <p class="card-text">РЈРґРѕР±СЃС‚РІРѕ Рё РіСЉРІРєР°РІРѕСЃС‚ СЃ РІСЉР·РјРѕР¶РЅРѕСЃС‚ Р·Р° СЂР°Р·СЃСЂРѕС‡РµРЅРѕ РїР»Р°С‰Р°РЅРµ Рё Р±РѕРЅСѓСЃРё.</p>
+          <a href="Cards.html" class="btn btn-outline-primary">Р’РёР¶ РїРѕРІРµС‡Рµ</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Р›РёР·РёРЅРі</h5>
+          <p class="card-text">Р›РµСЃРµРЅ РЅР°С‡РёРЅ Р·Р° С„РёРЅР°РЅСЃРёСЂР°РЅРµ РЅР° Р°РІС‚РѕРјРѕР±РёР» РёР»Рё С‚РµС…РЅРёРєР° Р±РµР· РіРѕР»СЏРјРѕ Р°РІР°РЅСЃРѕРІРѕ РїР»Р°С‰Р°РЅРµ.</p>
+          <a href="Leasing.html" class="btn btn-outline-primary">Р’РёР¶ РїРѕРІРµС‡Рµ</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- РРЅС„Рѕ СЃРµРєС†РёСЏ -->
+<div class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-lg-6">
+      <h2>РљР°РєРІРѕ Рµ РєСЂРµРґРёС‚РѕСЃРїРѕСЃРѕР±РЅРѕСЃС‚?</h2>
+      <p class="text-justify">
+        РљСЂРµРґРёС‚РѕСЃРїРѕСЃРѕР±РЅРѕСЃС‚С‚Р° Рµ СЃРїРѕСЃРѕР±РЅРѕСЃС‚С‚Р° Рё РіРѕС‚РѕРІРЅРѕСЃС‚С‚Р° РЅР° РєСЂРµРґРёС‚РѕРёСЃРєР°С‚РµР»СЏ РґР° РёР·РїСЉР»РЅСЏРІР° Р·Р°РґСЉР»Р¶РµРЅРёСЏС‚Р° СЃРё РїРѕ РґРѕРіРѕРІРѕСЂР° СЃ Р±Р°РЅРєР°С‚Р°.
+        РўСЏ СЃРµ РѕС†РµРЅСЏРІР° РІСЉР· РѕСЃРЅРѕРІР° РЅР° РґРѕС…РѕРґРё, СЂР°Р·С…РѕРґРё, РёСЃС‚РѕСЂРёСЏ РЅР° РїР»Р°С‰Р°РЅРёСЏС‚Р° Рё СЂРµРґРёС†Р° РґСЂСѓРіРё С„Р°РєС‚РѕСЂРё.
+      </p>
+      <a href="criterion.html" class="btn btn-primary">РќР°СѓС‡Рё РїРѕРІРµС‡Рµ</a>
+    </div>
+    <div class="col-lg-6 text-center">
+      <img src="images/bag_of_money.png" alt="РљСЂРµРґРёС‚" class="img-fluid" style="max-height:250px;">
+    </div>
+  </div>
+</div>
+
+<!-- Р¤СѓС‚СЉСЂ -->
+<footer class="bg-dark text-light py-3 mt-auto">
+  <div class="container text-center">
+    <p class="mb-1">
+      <a href="index.html" class="text-light text-decoration-none">РќР°С‡Р°Р»Рѕ</a> |
+      <a href="IK.html" class="text-light text-decoration-none">РРїРѕС‚РµС‡РµРЅ РєСЂРµРґРёС‚</a> |
+      <a href="PK.html" class="text-light text-decoration-none">РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєСЂРµРґРёС‚</a> |
+      <a href="Cards.html" class="text-light text-decoration-none">РљСЂРµРґРёС‚РЅРё РєР°СЂС‚Рё</a> |
+      <a href="Leasing.html" class="text-light text-decoration-none">Р›РёР·РёРЅРі</a> |
+      <a href="criterion.html" class="text-light text-decoration-none">РљСЂРµРґРёС‚РµРЅ СЂРµР№С‚РёРЅРі</a> |
+      <a href="Contacts.html" class="text-light text-decoration-none">РљРѕРЅС‚Р°РєС‚Рё</a>
+    </p>
+    <small>&copy; 2025 РњРѕСЏ РєСЂРµРґРёС‚РµРЅ СЃР°Р№С‚</small>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-<!-- #EndTemplate -->
-
 </html>
