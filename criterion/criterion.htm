@@ -9,20 +9,181 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
-        .navbar-dark.bg-dark {
-            background-color: #343a40 !important;
+        :root {
+            --primary-color: #3a7bd5;
+            --secondary-color: #00d2ff;
+            --accent-color: #3498db;
+            --dark-color: #212529; /* Почти черен цвят като в index.html */
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --bg-light: #f5f7fa;
+            --text-dark: #343a40;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
         }
+        
+        body {
+            background-color: var(--bg-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+        
+        /* Навигация както в index.html - почти черна */
+        .navbar {
+            background-color: var(--dark-color) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        /* Хедър секция */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/calculator-bg.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             padding: 4rem 0;
             margin-bottom: 3rem;
             border-radius: 0 0 20px 20px;
         }
+        
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-hero {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hero:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        /* Останали стилове за съдържанието */
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
         .feature-icon {
             font-size: 2.5rem;
-            color: #0d6efd;
             margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .calculator-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2c64b4;
+        }
+        
+        .comparison-table {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .bank-logo {
+            max-height: 40px;
+            width: auto;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(58, 123, 213, 0.1);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+        
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
         }
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -33,11 +194,63 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .btn-start {
-            padding: 1rem 2.5rem;
-            font-size: 1.2rem;
-            border-radius: 50px;
+        
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+        }
+        
+        .slider-value {
             font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .bg-light-custom {
+            background-color: #f0f8ff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--dark-color);
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        .border-primary {
+            border-color: var(--primary-color) !important;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+        
+        .option-card {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            border-color: var(--primary-color);
+            background-color: #f8f9fa;
+        }
+        
+        .option-card.selected {
+            border-color: var(--primary-color);
+            background-color: #e8f4ff;
         }
         .step-number {
             width: 40px;
@@ -56,7 +269,7 @@
 <body>
 
     <!-- Навигация (Navbar) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand fw-bold" href="../index.html">Мога ли да взема кредит?!?</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -95,11 +308,10 @@
 
     <!-- Херо секция -->
     <section class="hero-section text-center">
-        <div class="container">
+        <div class="container hero-content">
             <h1 class="display-4 fw-bold mb-3">Кредитен калкулатор</h1>
             <p class="lead mb-4">Намерете вашия кредитен рейтинг само с няколко клика</p>
-            <a href="c1.html" class="btn btn-warning btn-start">
-                <i class="bi bi-calculator me-2"></i>Започнете сега
+            <a href="c1.html" class="btn btn-hero">Започнете сега
             </a>
         </div>
     </section>
@@ -166,7 +378,7 @@
         <!-- Предимства -->
         <div class="row mb-5">
             <div class="col-lg-10 mx-auto">
-                <div class="card bg-light border-0">
+                <div class="card bg-light-custom border-0">
                     <div class="card-body p-5">
                         <h3 class="text-center mb-4">Защо да използвате нашия калкулатор?</h3>
                         
@@ -174,7 +386,7 @@
                             <div class="step-number">1</div>
                             <div>
                                 <h5>Безплатен и анонимен</h5>
-                                <p class="mb-0">Не се изискват такси или регистрация. Вашите данни остават напълно confidential.</p>
+                                <p class="mb-0">Не се изискват такси или регистрация. Вашите данни остават напълно поверителен.</p>
                             </div>
                         </div>
                         
@@ -209,7 +421,7 @@
         <!-- Призив към действие -->
         <div class="row mb-5">
             <div class="col text-center">
-                <div class="card bg-primary text-white">
+                <div class="card text-white" style="background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);">
                     <div class="card-body py-5">
                         <h3 class="card-title mb-3">Готови ли сте да откриете вашия кредитен рейтинг?</h3>
                         <p class="card-text mb-4">Отнема само 5 минути и може да ви спести часове неуспешни кандидатствания.</p>
@@ -275,16 +487,16 @@
     </main>
 
     <!-- Футър -->
-    <footer class="bg-dark text-light text-center py-4 mt-5">
+    <footer class="text-center py-4 mt-5">
         <div class="container">
             <p class="mb-0">
-                <a href="../index.html" class="text-light text-decoration-none">Начало</a> | 
-                <a href="../IK.htm" class="text-light text-decoration-none">Ипотечен кредит</a> | 
-                <a href="../PK.htm" class="text-light text-decoration-none">Потребителски кредит</a> | 
-                <a href="../Cards.htm" class="text-light text-decoration-none">Кредитни карти</a> | 
-                <a href="../Leasing.htm" class="text-light text-decoration-none">Лизинг</a> | 
-                <a href="criterion.htm" class="text-light text-decoration-none">Кредитен рейтинг</a> | 
-                <a href="../Contacts.htm" class="text-light text-decoration-none">Контакти</a>
+                <a href="../index.html" class="text-decoration-none">Начало</a> | 
+                <a href="../IK.htm" class="text-decoration-none">Ипотечен кредит</a> | 
+                <a href="../PK.htm" class="text-decoration-none">Потребителски кредит</a> | 
+                <a href="../Cards.htm" class="text-decoration-none">Кредитни карти</a> | 
+                <a href="../Leasing.htm" class="text-decoration-none">Лизинг</a> | 
+                <a href="criterion.htm" class="text-decoration-none">Кредитен рейтинг</a> | 
+                <a href="../Contacts.htm" class="text-decoration-none">Контакти</a>
             </p>
             <p class="mt-2 mb-0"><small>© 2023 Кредитен калкулатор. Всички права запазени.</small></p>
         </div>
