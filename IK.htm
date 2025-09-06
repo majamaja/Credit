@@ -13,7 +13,7 @@
             --primary-color: #3a7bd5;
             --secondary-color: #00d2ff;
             --accent-color: #3498db;
-            --dark-color: #2c3e50;
+            --dark-color: #212529; 
             --light-color: #f8f9fa;
             --success-color: #28a745;
             --danger-color: #dc3545;
@@ -29,9 +29,9 @@
             color: var(--text-dark);
         }
         
-        /* Навигация както в index.html */
+        /* Навигация */
         .navbar {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+            background-color: var(--dark-color) !important;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 0.5rem 1rem;
         }
@@ -43,32 +43,30 @@
         }
         
         .nav-link {
-            color: rgba(255, 255, 255, 0.9) !important;
+            color: rgba(255, 255, 255, 0.85) !important;
             font-weight: 500;
             padding: 0.5rem 1rem !important;
             transition: all 0.3s ease;
-            border-radius: 4px;
         }
         
         .nav-link:hover, .nav-link.active {
             color: white !important;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
         }
         
         .navbar-toggler {
             border: none;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.85);
         }
         
-        /* Хедър секция както в index.html */
+        /* Хедър секция */
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 5rem 0;
+            padding: 4rem 0;
             margin-bottom: 3rem;
-            text-align: center;
+            border-radius: 0 0 20px 20px;
         }
         
         .hero-section h1 {
@@ -90,7 +88,7 @@
             color: var(--primary-color);
             border: none;
             padding: 0.8rem 2rem;
-            border-radius: 6px;
+            border-radius: 50px;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
@@ -249,7 +247,7 @@
     </style>
 </head>
 <body>
-    <!-- Навигация както в index.html -->
+    <!-- Навигация както в index.html - почти черна -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
@@ -291,8 +289,8 @@
 
     <!-- Хедър секция както в index.html -->
     <section class="hero-section">
-        <div class="container">
-            <h1>Ипотечни кредити</h1>
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Ипотечни кредити</h1>
             <p>Намерете най-добрия ипотечен кредит за вашия дом с нашия интелигентен калкулатор и съвети от експерти</p>
             <a href="#calculator" class="btn btn-hero">Изчислете своя кредит</a>
         </div>

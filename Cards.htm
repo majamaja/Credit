@@ -1,129 +1,708 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<!-- #BeginTemplate "master.dwt" -->
-
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<!-- #BeginEditable "doctitle" -->
-<title>Мога ли да взема кредит</title>
-<!-- #EndEditable -->
-<link rel="stylesheet" type="text/css" title="CSS" href="styles/style1.css" media="screen" />
-<style type="text/css">
-.style1 {
-	color: #FF9900;
-}
-.style2 {
-	border-width: 0px;
-}
-.style4 {
-	text-align: center;
-}
-.style5 {
-	text-align: center;
-	margin-left: 0px;
-}
-.style6 {
-	text-align: center;
-	margin-right: 0px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кредитни карти - Мога ли да взема кредит?</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #3a7bd5;
+            --secondary-color: #00d2ff;
+            --accent-color: #3498db;
+            --dark-color: #212529; /* Почти черен цвят като в index.html */
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --bg-light: #f5f7fa;
+            --text-dark: #343a40;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+        
+        /* Навигация както в index.html - почти черна */
+        .navbar {
+            background-color: var(--dark-color) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        /* Хедър секция */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-hero {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hero:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        /* Останали стилове за съдържанието */
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .calculator-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2c64b4;
+        }
+        
+        .comparison-table {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .bank-logo {
+            max-height: 40px;
+            width: auto;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(58, 123, 213, 0.1);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+        
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+        }
+        
+        .slider-value {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .bg-light-custom {
+            background-color: #f0f8ff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--dark-color);
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        .border-primary {
+            border-color: var(--primary-color) !important;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+        
+        .option-card {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            border-color: var(--primary-color);
+            background-color: #f8f9fa;
+        }
+        
+        .option-card.selected {
+            border-color: var(--primary-color);
+            background-color: #e8f4ff;
+        }
+        
+        .credit-card {
+            border-radius: 15px;
+            padding: 2rem;
+            color: white;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .credit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-visa {
+            background: linear-gradient(135deg, #1a1f71 0%, #054ab6 100%);
+        }
+        
+        .card-mastercard {
+            background: linear-gradient(135deg, #cc0000 0%, #ff9900 100%);
+        }
+        
+        .card-amex {
+            background: linear-gradient(135deg, #006fcf 0%, #009cde 100%);
+        }
+        
+        .card-chip {
+            width: 50px;
+            height: 40px;
+            background: linear-gradient(135deg, #ddb350 0%, #e6c97e 100%);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-chip::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Навигация както в index.html - почти черна -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                Мога ли да взема кредит?
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Начало</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="IK.htm">Ипотечен кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PK.htm">Потребителски кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Cards.htm">Кредитни карти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Leasing.htm">Лизинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="criterion/criterion.htm">Кредитен рейтинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="relationships.htm">Полезни контакти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacts.htm">Пишете ни</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="style4">
+    <!-- Хедър секция както в index.html -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1>Кредитни карти</h1>
+            <p>Открийте най-добрите кредитни карти с изгодни лихвени проценти, бонус програми и уникални предимства</p>
+            <a href="#calculator" class="btn btn-hero">Изчислете своите възможности</a>
+        </div>
+    </section>
 
-<!-- Begin Container -->
-<div id="container">
-	<!-- Begin Masthead -->
-	<div id="masthead">
-		<h1><strong>Мога ли да взема кредит?!?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-		<span class="style1"><strong>
-		<a href="index.html">
-		<img src="images/home3.GIF" width="30" height="26" class="style2" /></a><a href="relationships.htm"><img src="images/Microsoft_Messenger_for_Mac_7_icon.png" width="30" height="26" class="style2" /></a></strong></span>
-		<img src="images/footer.jpg" width="702" height="137" style="float: left" /><img src="bag_of_money.png" width="133" height="145" style="float: left" /><a href="Contacts.htm"><img src="images/emailIcon.png" width="30" height="26" class="style2" /></a></div>
-	<!-- End Masthead -->
-	<!-- Begin Navigation -->
-	<div id="navigation">
-		<ul>
+    <!-- Основни предимства -->
+    <section class="container mb-5">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold mb-3">Защо да изберете кредитна карта?</h2>
+                <p class="text-muted">Кредитните карти предлагат гъвкавост, сигурност и разнообразни предимства за всеки ден</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-credit-card feature-icon"></i>
+                        <h4 class="card-title">Гъвкавост при плащанията</h4>
+                        <p class="card-text">Плащайте удобно и използвайте безлихвения период</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-percent feature-icon"></i>
+                        <h4 class="card-title">Кешбек и отстъпки</h4>
+                        <p class="card-text">Получавайте обратно част от средствата си при всяко плащане</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-airplane feature-icon"></i>
+                        <h4 class="card-title">Пътешествия и предимства</h4>
+                        <p class="card-text">Специални оферти за пътувания, застраховки и много други</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<li class="style4"><b><a href="IK.htm" style="width: 154px">Ипотечен кредит</a></b></li>
-			<li class="style4"><b><a href="PK.htm" style="width: 212px">Потребителски кредит</a></b></li>
-			<li class="style5"><b><a href="Cards.htm" style="width: 166px">Кредитни карти</a></b></li>
-			<li style="width: 110px" class="style6"><b><a href="Leasing.htm">Лизинг</a></b></li>
-			<li style="width: 162px"><b><a href="criterion/criterion.htm">Кредитен рейтинг</a></b></li>
-			<li><br />
-			</li>
-		</ul>
-	</div>
-	<!-- End Navigation -->
-	<!-- Begin Page Content -->
-	<div id="page_content" style="left: 0px; top: 0px; height: 550px">
-		<!-- Begin Content -->
-		<div id="content" style="left: 0px; top: 0px; width: 841px; height: 500px;">
-			<!-- #BeginEditable "content" -->
-			<h2>Всичко за кредитните карти: видове, лихви и лимити;</h2>
-			<p><a href="index.html"><strong>Начало</strong></a> >> <a href="Cards.htm">
-			<strong>Кредитни карти</strong></a></p>
-			<textarea name="TextArea1" style="width: 800px; height: 330px">
-    Кредитни карти – едно удобство, което в последните години все по често навлиза в ежедневието на Българина. Те са едни от най-динамично развиващите се банкови продукти у нас.
+    <!-- Видове кредитни карти -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">Видове кредитни карти</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="credit-card card-visa">
+                    <div class="d-flex justify-content-between">
+                        <div class="card-chip"></div>
+                        <i class="bi bi-wifi" style="font-size: 2rem; transform: rotate(90deg);"></i>
+                    </div>
+                    <div>
+                        <h4>Visa Platinum</h4>
+                        <p>● ● ● ●   ● ● ● ●   ● ● ● ●   1 2 3 4</p>
+                        <div class="d-flex justify-content-between">
+                            <small>ИМЕ НА СОБСТВЕНИК</small>
+                            <small>02/28</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Стандартни карти</h4>
+                        <p class="card-text">Подходящи за всекидневие с основни предимства и ниски такси</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="credit-card card-mastercard">
+                    <div class="d-flex justify-content-between">
+                        <div class="card-chip"></div>
+                        <i class="bi bi-wifi" style="font-size: 2rem; transform: rotate(90deg);"></i>
+                    </div>
+                    <div>
+                        <h4>Mastercard Gold</h4>
+                        <p>● ● ● ●   ● ● ● ●   ● ● ● ●   5 6 7 8</p>
+                        <div class="d-flex justify-content-between">
+                            <small>ИМЕ НА СОБСТВЕНИК</small>
+                            <small>05/29</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Златни карти</h4>
+                        <p class="card-text">Допълнителни предимства, по-високи лимити и ексклузивни услуги</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="credit-card card-amex">
+                    <div class="d-flex justify-content-between">
+                        <div class="card-chip"></div>
+                        <i class="bi bi-wifi" style="font-size: 2rem; transform: rotate(90deg);"></i>
+                    </div>
+                    <div>
+                        <h4>American Express</h4>
+                        <p>● ● ● ●   ● ● ● ●   ● ● ● ●   9 0 1 2</p>
+                        <div class="d-flex justify-content-between">
+                            <small>ИМЕ НА СОБСТВЕНИК</small>
+                            <small>12/30</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card feature-card">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">Премium карти</h4>
+                        <p class="card-text">Ексклузивни услуги, високи лимити и премиум предимства</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    И тук както и при кредитите – изборът измежду постоянно заливащите ни реклами, промоции, предложения за „безлихвени” кредитни карти е изключително труден и зависещ от много фактори. Ще направим кратко представяне на кредитни карти предлагани в България:
-    Кредитни карти с които може да се оперира на национално ниво, т.е. само в рамките на България – такива карти са:
+    <!-- Сравнение на банки -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">Сравнение на кредитни карти</h2>
+        
+        <div class="table-responsive">
+            <table class="table table-hover comparison-table">
+                <thead>
+                    <tr>
+                        <th>Банка</th>
+                        <th>Годишна такса</th>
+                        <th>Лихва</th>
+                        <th>Кешбек</th>
+                        <th>Безлихвен период</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Банка+1" alt="Банка 1" class="bank-logo"></td>
+                        <td>20 лв</td>
+                        <td>16.9%</td>
+                        <td>1.5%</td>
+                        <td>45 дни</td>
+                        <td><button class="btn btn-sm btn-outline-primary">Кандидатствай</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Банка+2" alt="Банка 2" class="bank-logo"></td>
+                        <td>0 лв</td>
+                        <td>18.5%</td>
+                        <td>0.5%</td>
+                        <td>50 дни</td>
+                        <td><button class="btn btn-sm btn-outline-primary">Кандидатствай</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Банка+3" alt="Банка 3" class="bank-logo"></td>
+                        <td>40 лв</td>
+                        <td>15.9%</td>
+                        <td>2%</td>
+                        <td>55 дни</td>
+                        <td><button class="btn btn-sm btn-outline-primary">Кандидатствай</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
-    * Transcard кредитна карта – много удобна за текущите месечни нужди и задължения. Възможност за лесно плащане през интернет на месечните сметки за ток, вода, парно, телефон, интернет и кабелна телевизия. Възможност за пазаруване в много обекти в цялата страна, зареждане на гориво и теглене на пари в брой от бензиностанциите на Петрол.
-    * EuroLine кредитна карта – навлязла е основно като вид лизинг и възможност за закупуване на стоки на изплащане. Предлага се в самите магазини, основно за електроника, копютри и техника. В момента Пощенска банка притежава и обслужва бизнеса с кредитни карти EuroLine
+    <!-- Калкулатор -->
+    <section id="calculator" class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="calculator-card">
+                    <h2 class="text-center mb-4 fw-bold">Калкулатор за кредитна карта</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="cardDebt" class="form-label fw-semibold">Размер на дълга (лв)</label>
+                                <input type="range" class="form-range" min="100" max="10000" step="100" id="cardDebt" oninput="updateDebtValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>100 лв</span>
+                                    <span class="slider-value" id="cardDebtValue">2 500 лв</span>
+                                    <span>10 000 лв</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="cardInterest" class="form-label fw-semibold">Лихва (%)</label>
+                                <input type="range" class="form-range" min="10" max="25" step="0.1" id="cardInterest" oninput="updateInterestValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>10%</span>
+                                    <span class="slider-value" id="cardInterestValue">16.9%</span>
+                                    <span>25%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="monthlyPayment" class="form-label fw-semibold">Месечна вноска (лв)</label>
+                                <input type="range" class="form-range" min="50" max="1000" step="50" id="monthlyPayment" oninput="updatePaymentValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>50 лв</span>
+                                    <span class="slider-value" id="monthlyPaymentValue">250 лв</span>
+                                    <span>1 000 лв</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card border-0 bg-light-custom">
+                                <div class="card-body text-center p-4">
+                                    <h5>Детайли за изплащане</h5>
+                                    <h2 class="text-primary my-3" id="payoffTime">11 месеца</h2>
+                                    <div class="text-start">
+                                        <p class="mb-1"><i class="bi bi-arrow-right-circle me-2"></i>Общо дължима сума: <span id="totalAmount">2 750 лв</span></p>
+                                        <p class="mb-1"><i class="bi bi-arrow-right-circle me-2"></i>Общо лихви: <span id="totalInterestAmount">250 лв</span></p>
+                                        <p class="mb-0"><i class="bi bi-arrow-right-circle me-2"></i>Такси: <span id="fees">20 лв</span></p>
+                                    </div>
+                                    <button class="btn btn-primary mt-4 px-4" onclick="calculateCard()">Преизчисли</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Често задавани въпроси -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">Често задавани въпроси</h2>
+        
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        Какво е безлихвен период?
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Безлихвеният период е времеви интервал, през който не се начислява лихва върху направените разходи. Обикновено е между 45 и 55 дни.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Как работи кешбекът?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Кешбек системата ви връща определен процент от сумата на направените разходи. Например, при 1% кешбек, за разход от 100 лв ще получите обратно 1 лв.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        Какви са таксите за кредитна карта?
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Таксите могат да включват годишна такса за поддръжка, такса за теглене на кеш, такса за замянка на карта и други. Условията се различават между банките.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    Международни кредитни карти – с възможност за покупки в страната, в чужбина или чрез интернет.
+    <!-- Футър -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Мога ли да взема кредит?</h5>
+                    <p>Намерете най-добрите кредитни оферти на пазара и изчислете своята месечна вноска.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Връзки</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none">Начало</a></li>
+                        <li><a href="IK.htm" class="text-white text-decoration-none">Ипотечен кредит</a></li>
+                        <li><a href="PK.htm" class="text-white text-decoration-none">Потребителски кредит</a></li>
+                        <li><a href="Cards.htm" class="text-white text-decoration-none">Кредитни карти</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Контакти</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i> info@kredit.bg</li>
+                        <li><i class="bi bi-telephone me-2"></i> +359 888 123 456</li>
+                        <li><i class="bi bi-geo-alt me-2"></i> София, България</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Мога ли да взема кредит?. Всички права запазени.</p>
+            </div>
+        </div>
+    </footer>
 
-    * Кредитна карта Visa – издава се от почти всяка банка в България, най популярна и в света което дава възможност и за плащане в най–много търговски обекти, заведения, хотели и т.н.
-    * Кредитна карта MasterCard – като цяло важи всичко казано за VISA. По-малко разпространена по света, което значи че има доста обекти в които може да платите с VISA, а не можете с МasterCard. Също се издава от почти всяка банка в България.
-    * Кредитна карта DINERS CLUB – Така наречената Клубна кредитна карта. Специфичното е, че в края на месеца трябва да се погаси цялото задължение по картата, а не само определен процент. Удобна е когато не желаете да носите в себе си пари в брой. Навсякаде по света можете да се възползвате от предимствата на членството си в Diners Club, изразено чрез по-специално отношение по летища, ресторанти и търговски обекти.
-    * Кредитна карта American Express – доста популярно по света, но не и в България. Единствената, която при определени условия може да е без кредитен лимит, с нея се предлага безплатна застраховка, възможност за по-дълъг безлихвен гратисен период. За сметка на това годишните такси за обслужване са малко по-високи. Има варианти gold, platinum или corporate.
-
-
-    Овърдрафт по дебитна карта – издава се обикновенно от банката в която получавате заплатата си. Кредитния лимит е от порядъка на 4-5 месечни заплати. Удобното тук е, че в момента, в който погасите някаква част от кредита, веднага можете да я изтеглите отново. Това допуска да стоите на пълен минус колкото време желаете, стига да си плащате лихвите, което автоматично правите получавайки си заплатата по картовата сметка.
-
-    Виртуална банкова карта – на практика това не е кредитна карта в пълния смисъл на думата, но е много удобна при извършване на плащания през интернет. Когато решите да си закупите нещо през интернет, прехвърляте средства от разплащателната си сметка към виртуалната кредитна карта, след което можете да го закупите чрез интернет. Предимството е, че няма лихвени проценти, няма годишни такси и предлага голяма сигурност от гледна точка на кражба на данни.
-
-    Основни детайли на които да е необходимо да се обърне внимание при избора на кредитна карта:
-
-    * Максимален кредитен лимит – това е сумата която най-много можем да изхарчим използвайки кредитната карта. Добре е да съобразим, че тази сума веднъж използвана трябва да се възстанови по картата.        Желателно е сумата да е съобразена с Вашите възможности.
-    * Лихви по кредитна карта – лихвата начислявана след изтичане на гратисния период. При някой банки е различен при покупка и при теглене в брой.
-    * Гратисен период – периода в който не ни се начислява лихва за изразходваната сума. При някой банки е различен при покупка и при теглене в брой.
-    * Минимално месечно погасяване – колко процента от изразходваната сума трябва да се внася месечно за да не започват да текат наказателни лихви.
-    * Годишна такса за обслужване – обикновенно е тврда сума която ни се удържа всяка година от картата.
-    * Обърнете внимание на различните видове други такси по кредитната карта, като примерно ТАКСА ЗА ВНАСЯНЕ ПАРИ В БРОЙ, ТАКСА ЗА ПРОСРОЧЕНО ПЛАЩАНЕ, ТАКСА ЗА ПРЕИЗДАВАНЕ НА КАРТА, ТАКСА ЗА МЕСЕЧНО ИЗВЛЕЧЕНИЕ и др.
-    * Лимитите при теглене в брой и местата от където това може да се осъществява.
-    * Възползвайте се от някой видове промоции и бонуси предлагани от банките, като внимавате те да не са за сметка на други от условията по картата.
-
-</textarea>			
-									
-			
-						<!-- #EndEditable --></div>
-		<!-- End Content -->
-		<!-- Begin Sidebar -->
-				<!-- End Sidebar --></div>
-	<!-- End Page Content -->
-	<!-- Begin Footer -->
-	<div id="footer" style="height: 31px">
-		<p><a href="index.html">Начало</a> | <a href="IK.htm">Ипотечен кредит</a> 
-		|
-		<a href="PK.htm">Потребителски кредит</a> | <a href="Cards.htm">
-		Кредитни карти</a> 
-		| <a href="Leasing.htm">Лизинг</a> |
-		<a href="criterion/criterion.htm">Кредитен рейтинг</a> |
-		<a href="Contacts.htm">Контакти</a></p>
-	</div>
-	<!-- End Footer --></div>
-<!-- End Container -->
-
-</div>
-
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Инициализация на стойностите
+        document.addEventListener('DOMContentLoaded', function() {
+            updateDebtValue(2500);
+            updateInterestValue(16.9);
+            updatePaymentValue(250);
+            calculateCard();
+        });
+        
+        // Функции за актуализиране на стойностите за кредитна карта
+        function updateDebtValue(value) {
+            document.getElementById('cardDebtValue').textContent = new Intl.NumberFormat('bg-BG').format(value) + ' лв';
+            calculateCard();
+        }
+        
+        function updateInterestValue(value) {
+            document.getElementById('cardInterestValue').textContent = value + '%';
+            calculateCard();
+        }
+        
+        function updatePaymentValue(value) {
+            document.getElementById('monthlyPaymentValue').textContent = new Intl.NumberFormat('bg-BG').format(value) + ' лв';
+            calculateCard();
+        }
+        
+        // Функция за изчисление на кредитна карта
+        function calculateCard() {
+            const cardDebt = document.getElementById('cardDebt').value;
+            const cardInterest = document.getElementById('cardInterest').value;
+            const monthlyPayment = document.getElementById('monthlyPayment').value;
+            
+            const monthlyInterest = cardInterest / 100 / 12;
+            let remainingDebt = cardDebt;
+            let months = 0;
+            let totalInterest = 0;
+            
+            while (remainingDebt > 0 && months < 60) {
+                const interestAmount = remainingDebt * monthlyInterest;
+                totalInterest += interestAmount;
+                
+                const principalPayment = monthlyPayment - interestAmount;
+                remainingDebt -= principalPayment;
+                
+                months++;
+                
+                if (remainingDebt < 0) {
+                    remainingDebt = 0;
+                }
+            }
+            
+            const totalAmount = parseFloat(cardDebt) + totalInterest;
+            const fees = 20; // Примерна годишна такса
+            
+            document.getElementById('payoffTime').textContent = months + ' месеца';
+            document.getElementById('totalAmount').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(totalAmount) + ' лв';
+            document.getElementById('totalInterestAmount').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(totalInterest) + ' лв';
+            document.getElementById('fees').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(fees) + ' лв';
+        }
+    </script>
 </body>
-
-<!-- #EndTemplate -->
-
 </html>

@@ -1,108 +1,540 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<!-- #BeginTemplate "master.dwt" -->
-
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<!-- #BeginEditable "doctitle" -->
-<title>Мога ли да взема кредит</title>
-<!-- #EndEditable -->
-<link rel="stylesheet" type="text/css" title="CSS" href="styles/style1.css" media="screen" />
-<style type="text/css">
-.style1 {
-	color: #FF9900;
-}
-.style2 {
-	border-width: 0px;
-}
-.style4 {
-	text-align: center;
-}
-.style5 {
-	text-align: center;
-	margin-left: 0px;
-}
-.style6 {
-	text-align: center;
-	margin-right: 0px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лизинг - Мога ли да взема кредит?</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #3a7bd5;
+            --secondary-color: #00d2ff;
+            --accent-color: #3498db;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --bg-light: #f5f7fa;
+            --text-dark: #343a40;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+        
+        /* Навигация */
+        .navbar {
+            background-color: var(--dark-color) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 4px;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        /* ХЕДЪР СЕКЦИЯ*/
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-hero {
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hero:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        /* Останали стилове */
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 100%;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .calculator-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2c64b4;
+        }
+        
+        .comparison-table {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .bank-logo {
+            max-height: 40px;
+            width: auto;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(58, 123, 213, 0.1);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+        
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .form-range::-webkit-slider-thumb {
+            background: var(--primary-color);
+        }
+        
+        .form-range::-moz-range-thumb {
+            background: var(--primary-color);
+        }
+        
+        .slider-value {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+        
+        .bg-light-custom {
+            background-color: #f0f8ff;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--dark-color);
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        .border-primary {
+            border-color: var(--primary-color) !important;
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+        
+        .option-card {
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            border-color: var(--primary-color);
+            background-color: #f8f9fa;
+        }
+        
+        .option-card.selected {
+            border-color: var(--primary-color);
+            background-color: #e8f4ff;
+        }
+        
+        .leasing-type-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .leasing-type-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .leasing-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                Мога ли да взема кредит?
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Начало</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="IK.htm">Ипотечен кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="PK.htm">Потребителски кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cards.htm">Кредитни карти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Leasing.htm">Лизинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="criterion/criterion.htm">Кредитен рейтинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="relationships.htm">Полезни контакти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacts.htm">Пишете ни</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<div class="style4">
+    <!-- ХЕДЪР СЕКЦИЯ -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">Лизинг</h1>
+            <p class="lead mb-4">Намерете най-добрия лизинг за вашия автомобил или оборудване с нашия интелигентен калкулатор</p>
+            <a href="#calculator" class="btn btn-hero">Изчислете своя лизинг</a>
+        </div>
+    </section>
 
-<!-- Begin Container -->
-<div id="container">
-	<!-- Begin Masthead -->
-	<div id="masthead">
-		<h1><strong>Мога ли да взема кредит?!?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-		<span class="style1"><strong>
-		<a href="index.html">
-		<img src="images/home3.GIF" width="30" height="26" class="style2" /></a><a href="relationships.htm"><img src="images/Microsoft_Messenger_for_Mac_7_icon.png" width="30" height="26" class="style2" /></a></strong></span>
-		<img src="images/footer.jpg" width="702" height="137" style="float: left" /><img src="bag_of_money.png" width="133" height="145" style="float: left" /><a href="Contacts.htm"><img src="images/emailIcon.png" width="30" height="26" class="style2" /></a></div>
-	<!-- End Masthead -->
-	<!-- Begin Navigation -->
-	<div id="navigation">
-		<ul>
+    <!-- Основни предимства -->
+    <section class="container mb-5">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="fw-bold mb-3">Защо да изберете лизинг?</h2>
+                <p class="text-muted">Лизингът предлага гъвкавост, данъчни предимства и възможност за актуализация на активите</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-cash-coin feature-icon"></i>
+                        <h4 class="card-title">По-ниски месечни вноски</h4>
+                        <p class="card-text">Вноските са по-ниски в сравнение с традиционен кредит</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-graph-up-arrow feature-icon"></i>
+                        <h4 class="card-title">Данъчни предимства</h4>
+                        <p class="card-text">Вноските за лизинг се приемат за разход за фирмите</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-arrow-repeat feature-icon"></i>
+                        <h4 class="card-title">Лека обновяване</h4>
+                        <p class="card-text">Възможност за замяна на актива след изтичане на срока</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<li class="style4"><b><a href="IK.htm" style="width: 154px">Ипотечен кредит</a></b></li>
-			<li class="style4"><b><a href="PK.htm" style="width: 212px">Потребителски кредит</a></b></li>
-			<li class="style5"><b><a href="Cards.htm" style="width: 166px">Кредитни карти</a></b></li>
-			<li style="width: 110px" class="style6"><b><a href="Leasing.htm">Лизинг</a></b></li>
-			<li style="width: 162px"><b><a href="criterion/criterion.htm">Кредитен рейтинг</a></b></li>
-			<li><br />
-			</li>
-		</ul>
-	</div>
-	<!-- End Navigation -->
-	<!-- Begin Page Content -->
-	<div id="page_content" style="left: 0px; top: 0px; height: 550px">
-		<!-- Begin Content -->
-		<div id="content" style="left: 0px; top: 0px; width: 841px; height: 500px;">
-			<!-- #BeginEditable "content" -->
-			<h2>Лизинг: договори, финансов и оперативен лизинг;</h2>
-			<p><a href="index.html"><strong>Начало</strong></a> >> <a href="Leasing.htm">
-			<strong>Лизинг</strong></a></p>
+    <!-- Видове лизинг -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">Видове лизинг</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card leasing-type-card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-car-front leasing-icon"></i>
+                        <h4 class="card-title">Автомобилен лизинг</h4>
+                        <p class="card-text">Лизинг на леки и товарни автомобили за физически и юридически лица</p>
+                        <ul class="text-start mt-3">
+                            <li>Първоначална вноска от 10-30%</li>
+                            <li>Срок от 2 до 5 години</li>
+                            <li>Възможност за изкупуване в края</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card leasing-type-card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-gear leasing-icon"></i>
+                        <h4 class="card-title">Лизинг на оборудване</h4>
+                        <p class="card-text">Финансиране на производствени машини, компютри и офис оборудване</p>
+                        <ul class="text-start mt-3">
+                            <li>Покриване на пълната стойност</li>
+                            <li>Срок в зависимост от живота на оборудването</li>
+                            <li>Обслужване и поддръжка включени</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card leasing-type-card h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="bi bi-building leasing-icon"></i>
+                        <h4 class="card-title">Имотен лизинг</h4>
+                        <p class="card-text">Дългосрочно ползвание на недвижими имоти срещу месечни вноски</p>
+                        <ul class="text-start mt-3">
+                            <li>Дългосрочни договори</li>
+                            <li>По-ниски първоначални разходи</li>
+                            <li>Поддръжка от лизингодателя</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Калкулатор -->
+    <section id="calculator" class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="calculator-card">
+                    <h2 class="text-center mb-4 fw-bold">Калкулатор за лизинг</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="carPrice" class="form-label fw-semibold">Цена на автомобила (лв)</label>
+                                <input type="range" class="form-range" min="10000" max="200000" step="1000" id="carPrice" oninput="updateCarPriceValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>10 000 лв</span>
+                                    <span class="slider-value" id="carPriceValue">50 000 лв</span>
+                                    <span>200 000 лв</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="initialPayment" class="form-label fw-semibold">Първоначална вноска (%)</label>
+                                <input type="range" class="form-range" min="10" max="50" step="5" id="initialPayment" oninput="updateInitialPaymentValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>10%</span>
+                                    <span class="slider-value" id="initialPaymentValue">20%</span>
+                                    <span>50%</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="leasingTerm" class="form-label fw-semibold">Срок на лизинга (месеци)</label>
+                                <input type="range" class="form-range" min="12" max="60" step="12" id="leasingTerm" oninput="updateLeasingTermValue(this.value)">
+                                <div class="d-flex justify-content-between">
+                                    <span>12 месеца</span>
+                                    <span class="slider-value" id="leasingTermValue">48 месеца</span>
+                                    <span>60 месеца</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card border-0 bg-light-custom">
+                                <div class="card-body text-center p-4">
+                                    <h5>Вашата месечна вноска</h5>
+                                    <h2 class="text-primary my-3" id="leasingMonthlyPayment">625 лв</h2>
+                                    <div class="text-start">
+                                        <p class="mb-1"><i class="bi bi-arrow-right-circle me-2"></i>Първоначална вноска: <span id="initialPaymentAmount">10 000 лв</span></p>
+                                        <p class="mb-1"><i class="bi bi-arrow-right-circle me-2"></i>Общо дължима сума: <span id="leasingTotalPayment">40 000 лв</span></p>
+                                        <p class="mb-0"><i class="bi bi-arrow-right-circle me-2"></i>Остатъчна стойност: <span id="residualValue">10 000 лв</span></p>
+                                    </div>
+                                    <button class="btn btn-primary mt-4 px-4" onclick="calculateLeasing()">Преизчисли</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<textarea name="TextArea1" style="width: 800px; height: 290px">
-Лизинг представлява договор за наем на стоки, оборудване, недвижима собственост или предприятие, сключен между 2 страни, наречени лизингодател и лизингополучател. Лизингодателят закупува /притежава правото на собственост върху/ посочените активи и ги предоставя за ползване от лизингополучателя.
-
-Най-разпространените в България форми на лизинг са финансов и оперативен лизинг. Основното различие между тях се състои в прехвърлянето на собствеността върху актива. При финансовия лизинг собствеността преминава от лизингодателя в лизингополучателя след изплащането на договорените лизингови вноски, докато оперативния лизинг фактически представлява отдаване под наем и след изтичане на договорения срок собствеността не се прехвърля.
-
-Редицата предимства на лизинга, като липсата на необходимост от друго обезпечение по сделката, поетапното изплащане, разсрочването на ДДС, по-голямата гъвкавост, го правят все по-предпочитан начин за финансиране, както за физически лица, така и за фирми. По този начин лизингът се превръща в реална алтернатива на банковото потребителско и инвестиционно кредитиране.
-
-За физическите лица най-разпространената стока на лизинг в България е автомобилът. На пазар вече съществуват множество лизингови комапнии, като някой от тях са обвързани с конкретни магазини, автокъщи, официални вносители на автомобили.
-
-Лизинговите компании и вносителите на автомобили предлагат все повече и повече опции, като например финансов лизинг с по-голяма остатъчна стойност на автомобила. Има и опция при плащането на тази остатъчна стойност тя да бъде първа вноска по финансиране на нов лизингов договор за нов автомобил. Това е така наречената Buy-Back система. Естествено, специалисти правят предварителна оценка на стария автомобил, за да се прецени дали остатъчната стойност вярно представя цената му.
-</textarea>			
-			
-									
-						<!-- #EndEditable --></div>
-		<!-- End Content -->
-		<!-- Begin Sidebar -->
-				<!-- End Sidebar --></div>
-	<!-- End Page Content -->
-	<!-- Begin Footer -->
-	<div id="footer" style="height: 31px">
-		<p><a href="indexl.htm">Начало</a> | <a href="IK.htm">Ипотечен кредит</a> 
-		|
-		<a href="PK.htm">Потребителски кредит</a> | <a href="Cards.htm">
-		Кредитни карти</a> 
-		| <a href="Leasing.htm">Лизинг</a> |
-		<a href="criterion/criterion.htm">Кредитен рейтинг</a> |
-		<a href="Contacts.htm">Контакти</a></p>
-	</div>
-	<!-- End Footer --></div>
-<!-- End Container -->
-
-</div>
-
+    <!-- Сравнение на компании -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4 fw-bold">Сравнение на лизингови оферти</h2>
+        
+        <div class="table-responsive">
+            <table class="table table-hover comparison-table">
+                <thead>
+                    <tr>
+                        <th>Компания</th>
+                        <th>Лихва</th>
+                        <th>Минимална вноска</th>
+                        <th>Макс. срок</th>
+                        <th>Месечна вноска*</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100x30?text=Лизинг+1" alt="Лизинг 1" class="bank-logo"></td>
+                        <td>5.9%</td>
+                        <td>10%</td>
+                        <td>60 месеца</td>
+                        <td>630 лв</td>
+                        <td><button class="btn btn-sm btn-outline-primary">Кандидатствай</button></td>
+                    </tr>
+                    <tr>
+                        <td><img src="極速赛车开奖直播历史记录、开奖结果查询">// Инициализация на стойностите
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCarPriceValue(50000);
+            updateInitialPaymentValue(20);
+            updateLeasingTermValue(48);
+            calculateLeasing();
+        });
+        
+        // Функции за актуализиране на стойностите за автомобилен лизинг
+        function updateCarPriceValue(value) {
+            document.getElementById('carPriceValue').textContent = new Intl.NumberFormat('bg-BG').format(value) + ' лв';
+            calculateLeasing();
+        }
+        
+        function updateInitialPaymentValue(value) {
+            document.getElementById('initialPaymentValue').textContent = value + '%';
+            calculateLeasing();
+        }
+        
+        function updateLeasingTermValue(value) {
+            document.getElementById('leasingTermValue').textContent = value + ' месеца';
+            calculateLeasing();
+        }
+        
+        // Функция за изчисление на автомобилен лизинг
+        function calculateLeasing() {
+            const carPrice = document.getElementById('carPrice').value;
+            const initialPaymentPercent = document.getElementById('initialPayment').value;
+            const leasingTerm = document.getElementById('leasingTerm').value;
+            
+            const initialPaymentAmount = carPrice * (initialPaymentPercent / 100);
+            const residualValue = carPrice * 0.2; // 20% остатъчна стойност
+            const financedAmount = carPrice - initialPaymentAmount - residualValue;
+            
+            // Опростено изчисление (в реални условия биха се включили лихви и такси)
+            const monthlyPayment = financedAmount / leasingTerm;
+            const totalPayment = initialPaymentAmount + (monthlyPayment * leasingTerm) + residualValue;
+            
+            document.getElementById('initialPaymentAmount').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(initialPaymentAmount) + ' лв';
+            document.getElementById('leasingMonthlyPayment').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(monthlyPayment) + ' лв';
+            document.getElementById('leasingTotalPayment').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(totalPayment) + ' лв';
+            document.getElementById('residualValue').textContent = new Intl.NumberFormat('bg-BG', { maximumFractionDigits: 2 }).format(residualValue) + ' лв';
+        }
+    </script>
 </body>
-
-<!-- #EndTemplate -->
-
 </html>
