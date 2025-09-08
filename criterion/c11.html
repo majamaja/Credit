@@ -1,176 +1,364 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<!-- #BeginTemplate "../master.dwt" -->
-
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<!-- #BeginEditable "doctitle" -->
-<title>Мога ли да взема кредит</title>
-<!-- #EndEditable -->
-<link rel="stylesheet" type="text/css" title="CSS" href="../styles/style1.css" media="screen" />
-<style type="text/css">
-.style1 {
-	color: #FF9900;
-}
-.style2 {
-	border-width: 0px;
-}
-.style4 {
-	text-align: center;
-}
-.style5 {
-	text-align: center;
-	margin-left: 0px;
-}
-.style6 {
-	text-align: center;
-	margin-right: 0px;
-}
-</style>
-<script>
-    function sendValue() {
-	const params = new URLSearchParams(window.location.search);
-	const passedValue = params.get("c10");
-        const selectedValue = document.querySelector('input[name="c11"]:checked');
-        if (selectedValue) {
-            const value = selectedValue.value;
-            window.location.href = `c12.html?c11=${encodeURIComponent(Number(value) + Number(passedValue))}`;
-
-        } else {
-			     const errorDiv = document.createElement('div');
-   	 errorDiv.innerHTML = `
-      <div style="
-        position: fixed;
-        top: 420px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #ffebee;
-        color: #b71c1c;
-        padding: 15px;
-        border-radius: 4px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        z-index: 10000;
-      ">
-       Моля, посочете отношение частна собственост – дългове преди да продължите.
-      </div>
-    `;
-    
-    document.body.appendChild(errorDiv);
-    // Auto-remove after 3 seconds
-    setTimeout(() => errorDiv.remove(), 3000);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стъпка 11 - Кредитен калкулатор</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .navbar-dark.bg-dark {
+            background-color: #343a40 !important;
         }
-    }
-</script>
+        .progress-container {
+            margin: 2rem 0;
+        }
+        .question-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .option-card {
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .option-card:hover {
+            border-color: #0d6efd;
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        .option-card.selected {
+            border-color: #0d6efd;
+            background-color: #e8f4ff;
+        }
+        .btn-next {
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+        .property-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #20c997;
+        }
+        .info-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+        .result-card {
+            border-left: 5px solid #0d6efd;
+        }
+        .score-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+        .recommendation {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="style4">
+    <!-- Навигация (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Мога ли да взема кредит?!?</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Начало</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../IK.htm">Ипотечен кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../PK.htm">Потребителски кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Cards.htm">Кредитни карти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Leasing.htm">Лизинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="criterion.htm">Кредитен рейтинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../relationships.htm">Полезни контакти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Contacts.htm">Пишете ни</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Begin Container -->
-<div id="container">
-	<!-- Begin Masthead -->
-	<div id="masthead">
-		<h1><strong>Мога ли да взема кредит?!?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-		<span class="style1"><strong>
-		<a href="../index.html">
-		<img src="../images/home3.GIF" width="30" height="26" class="style2" /></a><a href="../relationships.htm"><img src="../images/Microsoft_Messenger_for_Mac_7_icon.png" width="30" height="26" class="style2" /></a></strong></span>
-		<img src="../images/footer.jpg" width="702" height="137" style="float: left" /><img src="../bag_of_money.png" width="133" height="145" style="float: left" /><a href="../Contacts.htm"><img src="../images/emailIcon.png" width="30" height="26" class="style2" /></a></div>
-	<!-- End Masthead -->
-	<!-- Begin Navigation -->
-	<div id="navigation">
-		<ul>
+    <!-- Прогрес бар -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <small>Стъпка 11 от 11</small>
+                <small>100% завършено</small>
+            </div>
+            <div class="progress" style="height: 10px;">
+                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
 
-			<li class="style4"><b><a href="../IK.htm" style="width: 154px">Ипотечен кредит</a></b></li>
-			<li class="style4"><b><a href="../PK.htm" style="width: 212px">Потребителски кредит</a></b></li>
-			<li class="style5"><b><a href="../Cards.htm" style="width: 166px">Кредитни карти</a></b></li>
-			<li style="width: 110px" class="style6"><b><a href="../Leasing.htm">Лизинг</a></b></li>
-			<li style="width: 162px"><b><a href="criterion.htm">Кредитен рейтинг</a></b></li>
-			<li><br />
-			</li>
-		</ul>
-	</div>
-	<!-- End Navigation -->
-	<!-- Begin Page Content -->
-	<div id="page_content" style="left: 0px; top: 0px; height: 550px">
-		<!-- Begin Content -->
-		<div id="content" style="left: 0px; top: 0px; width: 841px; height: 500px;">
-			<!-- #BeginEditable "content" -->
-			<br/>
-			<h2>Посочете отношение частна собственост – дългове:</h2>
-			
-			<form   onsubmit="event.preventDefault(); sendValue();">
+    <!-- Основно съдържание -->
+    <main class="container mb-5">
+        
+        <!-- "breadcrumb" навигация -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Начало</a></li>
+                <li class="breadcrumb-item"><a href="criterion.htm">Кредитен рейтинг</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Стъпка 11</li>
+            </ol>
+        </nav>
 
-		<br/>
-		
-		<table style="width: 100%">
-			<tr>
-				<td style="width: 394px"><input type="radio" name="c11" value="2"/><span lang="en-us">&nbsp;
-		</span>Имуществото покрива задълженията над
-200 %
-<br/>
-		<input type="radio" name="c11" value="1"/><span lang="en-us">&nbsp;
-		</span>Имуществото покрива задълженията над
-150 %
-<br />
-		<input type="radio" name="c11" value="0"/><span lang="en-us">&nbsp;
-		</span>Имуществото покрива задълженията над
-125 %
-<br />
-		<input type="radio" name="c11" value="-1"/><span lang="en-us">&nbsp;
-		</span>Имуществото покрива задълженията над
-100 %
-<br />
-		<input type="radio" name="c11" value="-2"/><span lang="en-us">&nbsp;
-		</span>Имуществото покрива задълженията под
-100 %
-<br />
+        <!-- Въпрос -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card question-card">
+                    <div class="card-header bg-success text-white text-center py-3">
+                        <h4 class="card-title mb-0"><i class="bi bi-check-circle me-2"></i>Резултат от кредитния калкулатор</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <i class="bi bi-graph-up-arrow display-1 text-primary"></i>
+                            <h3 class="mt-3">Вашият кредитен рейтинг</h3>
+                            <div class="score-display my-4" id="finalScore">0</div>
+                            <div class="recommendation mb-4">
+                                <h5><i class="bi bi-lightbulb"></i> Препоръка</h5>
+                                <p id="recommendationText">Базирайки се на вашите отговори, ние оценяваме кредитоспособността ви.</p>
+                            </div>
+                        </div>
 
-		<br/>
-	
-		<input type="submit" value="next" style="width: 120px; height: 30px; background-color:#FF6600  "/>
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 result-card">
+                                    <div class="card-header bg-transparent">
+                                        <h5><i class="bi bi-currency-exchange"></i> Възможни кредитни продукти</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush" id="loanProducts">
+                                            <li class="list-group-item">Зареждане на информация...</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100 result-card">
+                                    <div class="card-header bg-transparent">
+                                        <h5><i class="bi bi-card-checklist"></i> Следващи стъпки</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="list-group list-group-flush" id="nextSteps">
+                                            <div class="list-group-item">Зареждане на информация...</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-			<br />
-		<br />
-				</td>
-				<td style="width: 231px">
-				<img src="../images/strategies-real-estate1.jpg" width="217" height="195" /></td>
-				<td><p align="justify">Ако кредитоискателят притежава собствена къща или жилище като цяло е по-малко склонен да поема рискове от  кредитоискател, живеещ под наем.
-				
-				</p>
-				<p align="justify">&nbsp;</p>
-				</td>
-			</tr>
-		</table>
-		
-		
+                        <div class="card mt-4 result-card">
+                            <div class="card-header bg-transparent">
+                                <h5><i class="bi bi-bar-chart"></i> Подробна оценка</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row" id="detailedEvaluation">
+                                    <div class="col-md-6">
+                                        <p>Зареждане на информация...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-			</form>
-			
-			
-						<!-- #EndEditable --></div>
-		<!-- End Content -->
-		<!-- Begin Sidebar -->
-				<!-- End Sidebar --></div>
-	<!-- End Page Content -->
-	<!-- Begin Footer -->
-	<div id="footer" style="height: 31px">
-		<p><a href="../index.html">Начало</a> | <a href="../IK.htm">Ипотечен кредит</a> 
-		|
-		<a href="../PK.htm">Потребителски кредит</a> | <a href="../Cards.htm">
-		Кредитни карти</a> 
-		| <a href="../Leasing.htm">Лизинг</a> |
-		<a href="criterion.htm">Кредитен рейтинг</a> |
-		<a href="../Contacts.htm">Контакти</a></p>
-	</div>
-	<!-- End Footer --></div>
-<!-- End Container -->
+                        <!-- Бутони за действие -->
+                        <div class="text-center mt-4">
+                            <button type="button" class="btn btn-primary btn-next me-2" onclick="restartCalculator()">
+                                <i class="bi bi-arrow-repeat me-2"></i>Започнете отначало
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" onclick="window.print()">
+                                <i class="bi bi-printer me-2"></i>Принтирай резултата
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Допълнителна информация -->
+                <div class="info-section mt-4">
+                    <h6><i class="bi bi-info-circle text-primary me-2"></i>За вашия кредитен рейтинг</h6>
+                    <p class="mb-0">Вашият кредитен рейтинг е базиран на отговорите, които дадохте в кредитния калкулатор. Този рейтинг не е официален кредитен репорт, а само оценка на кредитоспособността ви базирана на предоставените информация. За точна оценка на кредитната си история се обърнете към Бюро за кредитни reports или финансов консултант.</p>
+                </div>
+            </div>
+        </div>
 
-</div>
+    </main>
 
+    <!-- Футър -->
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">
+                <a href="../index.html" class="text-light text-decoration-none">Начало</a> | 
+                <a href="../IK.htm" class="text-light text-decoration-none">Ипотечен кредит</a> | 
+                <a href="../PK.htm" class="text-light text-decoration-none">Потребителски кредит</a> | 
+                <a href="../Cards.htm" class="text-light text-decoration-none">Кредитни карти</a> | 
+                <a href="../Leasing.htm" class="text-light text-decoration-none">Лизинг</a> | 
+                <a href="criterion.htm" class="text-light text-decoration-none">Кредитен рейтинг</a> | 
+                <a href="../Contacts.htm" class="text-light text-decoration-none">Контакти</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript за функционалността -->
+    <script>
+        // Функция за изчисляване на финалния резултат
+        function calculateFinalScore() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const c11Value = urlParams.get('c11') || '0';
+            return parseInt(c11Value);
+        }
+
+        // Функция за определяне на препоръката според резултата
+        function getRecommendation(score) {
+            if (score >= 8) {
+                return {
+                    text: "Отлична кредитоспособност! Имате много висок шанс за одобрение на кредит с благоприятни условия.",
+                    products: [
+                        "Ипотечен кредит с ниска лихва",
+                        "Потребителски кредит с предпочитани условия",
+                        "Кредитна карта с висока лимит",
+                        "Автокредит с минимална首付"
+                    ],
+                    steps: [
+                        "Свържете се с няколко банки за най-добри оферти",
+                        "Подгответе необходимите документи за кредитна заявка",
+                        "Изберете най-изгодната оферта за вас"
+                    ],
+                    evaluation: "Вашите финансови показатели са изключително силни. Имате стабилни доходи, ниска заложба и добра кредитна история, което ви прави предпочитан клиент за кредитори."
+                };
+            } else if (score >= 4) {
+                return {
+                    text: "Добра кредитоспособност. Шансовете ви за одобрение на кредит са добри, но условията може да не са най-изгодните.",
+                    products: [
+                        "Потребителски кредит със стандартни условия",
+                        "Кредитна карта със среден лимит",
+                        "Автокредит със стандартна首付",
+                        "Рефинансиране на съществуващи задължения"
+                    ],
+                    steps: [
+                        "Подобрете кредитната си история с точни вноски",
+                        "Намалете съществуващите си задължения",
+                        "Сравнете оферти от няколко финансови институции"
+                    ],
+                    evaluation: "Имате добри финансови показатели, но има възможности за подобрение. Фокусът върху намаляване на дълговете и поддържане на стабилни доходи ще подобри допълнително вашата кредитоспособност."
+                };
+            } else if (score >= 0) {
+                return {
+                    text: "Средна кредитоспособност. Възможно е да получите кредит, но може да срещнете по-строги условия и по-високи лихви.",
+                    products: [
+                        "Малък потребителски кредит",
+                        "Кредитна карта с нисък лимит",
+                        "Специализирани кредитни програми"
+                    ],
+                    steps: [
+                        "Подобрете кредитната си история",
+                        "Намалете съотношението дълг/доход",
+                        "Изчакайте 3-6 месеца преди да кандидатствате отново"
+                    ],
+                    evaluation: "Вашата кредитоспособност е на средно ниво. Препоръчваме да работите върху подобряване на кредитната си история и намаляване на съществуващите задължения, преди да кандидатствате за по-големи кредити."
+                };
+            } else {
+                return {
+                    text: "Ограничена кредитоспособност. В момента шансовете ви за одобрение на кредит са ниски. Препоръчваме да подобрите финансовото си състояние преди да кандидатствате.",
+                    products: [
+                        "Спестовни продукти",
+                        "Гарантирани кредитни програми (при наличието на гарант)"
+                    ],
+                    steps: [
+                        "Фокусирайте се върху изплащане на съществуващи дългове",
+                        "Изградете спешни спестявания",
+                        "Консултирайте се с финансов съветник"
+                    ],
+                    evaluation: "Вашите текущи финансови показатели показват висок риск за кредиторите. Препоръчваме да се концентрирате върху подобряване на финансовото си състояние преди да поемате нови задължения."
+                };
+            }
+        }
+
+        // Функция за показване на резултатите
+        function displayResults() {
+            const finalScore = calculateFinalScore();
+            const recommendation = getRecommendation(finalScore);
+            
+            // Показване на финалния резултат
+            document.getElementById('finalScore').textContent = finalScore;
+            document.getElementById('recommendationText').textContent = recommendation.text;
+            
+            // Показване на кредитни продукти
+            const loanProductsList = document.getElementById('loanProducts');
+            loanProductsList.innerHTML = '';
+            recommendation.products.forEach(product => {
+                const li = document.createElement('li');
+                li.className = 'list-group-item';
+                li.innerHTML = `<i class="bi bi-check2-circle text-success me-2"></i>${product}`;
+                loanProductsList.appendChild(li);
+            });
+            
+            // Показване на следващи стъпки
+            const nextStepsList = document.getElementById('nextSteps');
+            nextStepsList.innerHTML = '';
+            recommendation.steps.forEach(step => {
+                const div = document.createElement('div');
+                div.className = 'list-group-item';
+                div.innerHTML = `<i class="bi bi-arrow-right-circle text-primary me-2"></i>${step}`;
+                nextStepsList.appendChild(div);
+            });
+            
+            // Показване на подробна оценка
+            const detailedEvaluation = document.getElementById('detailedEvaluation');
+            detailedEvaluation.innerHTML = `
+                <div class="col-md-12">
+                    <p>${recommendation.evaluation}</p>
+                    <div class="progress mt-3" style="height: 20px;">
+                        <div class="progress-bar" role="progressbar" style="width: ${((finalScore + 12) / 24) * 100}%"></div>
+                    </div>
+                    <div class="d-flex justify-content-between mt-2">
+                        <small>Ниска кредитоспособност</small>
+                        <small>Висока кредитоспособност</small>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Функция за рестартиране на калкулатора
+        function restartCalculator() {
+            window.location.href = 'c1.html';
+        }
+
+        // Инициализация при зареждане на страницата
+        document.addEventListener('DOMContentLoaded', function() {
+            displayResults();
+        });
+    </script>
 </body>
-
-<!-- #EndTemplate -->
-
 </html>

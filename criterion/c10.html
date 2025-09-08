@@ -1,161 +1,304 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<!-- #BeginTemplate "../master.dwt" -->
-
+<!DOCTYPE html>
+<html lang="bg">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<!-- #BeginEditable "doctitle" -->
-<title>Мога ли да взема кредит</title>
-<!-- #EndEditable -->
-<link rel="stylesheet" type="text/css" title="CSS" href="../styles/style1.css" media="screen" />
-<style type="text/css">
-.style1 {
-	color: #FF9900;
-}
-.style2 {
-	border-width: 0px;
-}
-.style4 {
-	text-align: center;
-}
-.style5 {
-	text-align: center;
-	margin-left: 0px;
-}
-.style6 {
-	text-align: center;
-	margin-right: 0px;
-}
-</style>
-<script>
-    function sendValue() {
-	const params = new URLSearchParams(window.location.search);
-	const passedValue = params.get("c9");
-        const selectedValue = document.querySelector('input[name="c10"]:checked');
-        if (selectedValue) {
-            const value = selectedValue.value;
-            window.location.href = `c11.html?c10=${encodeURIComponent(Number(value) + Number(passedValue))}`;
-
-        } else {
-			
-     const errorDiv = document.createElement('div');
-   	 errorDiv.innerHTML = `
-      <div style="
-        position: fixed;
-        top: 420px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #ffebee;
-        color: #b71c1c;
-        padding: 15px;
-        border-radius: 4px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        z-index: 10000;
-      ">
-       Моля, въведете доходи в домакинството преди да продължите.
-      </div>
-    `;
-    
-    document.body.appendChild(errorDiv);
-    // Auto-remove after 3 seconds
-    setTimeout(() => errorDiv.remove(), 3000);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стъпка 11 - Кредитен калкулатор</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        .navbar-dark.bg-dark {
+            background-color: #343a40 !important;
         }
-    }
-</script>
+        .progress-container {
+            margin: 2rem 0;
+        }
+        .question-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .option-card {
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .option-card:hover {
+            border-color: #0d6efd;
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        .option-card.selected {
+            border-color: #0d6efd;
+            background-color: #e8f4ff;
+        }
+        .btn-next {
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+            border-radius: 50px;
+        }
+        .property-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #20c997;
+        }
+        .debt-icon {
+            color: #6f42c1;
+        }
+        .info-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="style4">
+    <!-- Навигация (Navbar) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">Мога ли да взема кредит?!?</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Начало</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../IK.htm">Ипотечен кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../PK.htm">Потребителски кредит</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Cards.htm">Кредитни карти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Leasing.htm">Лизинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="criterion.htm">Кредитен рейтинг</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../relationships.htm">Полезни контакти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../Contacts.htm">Пишете ни</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Begin Container -->
-<div id="container">
-	<!-- Begin Masthead -->
-	<div id="masthead">
-		<h1><strong>Мога ли да взема кредит?!?</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h1>
-		<span class="style1"><strong>
-		<a href="../index.html">
-		<img src="../images/home3.GIF" width="30" height="26" class="style2" /></a><a href="../relationships.htm"><img src="../images/Microsoft_Messenger_for_Mac_7_icon.png" width="30" height="26" class="style2" /></a></strong></span>
-		<img src="../images/footer.jpg" width="702" height="137" style="float: left" /><img src="../bag_of_money.png" width="133" height="145" style="float: left" /><a href="../Contacts.htm"><img src="../images/emailIcon.png" width="30" height="26" class="style2" /></a></div>
-	<!-- End Masthead -->
-	<!-- Begin Navigation -->
-	<div id="navigation">
-		<ul>
+    <!-- Прогрес бар -->
+    <div class="progress-container">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <small>Стъпка 11 от 12</small>
+                <small>92% завършено</small>
+            </div>
+            <div class="progress" style="height: 10px;">
+                <div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
 
-			<li class="style4"><b><a href="../IK.htm" style="width: 154px">Ипотечен кредит</a></b></li>
-			<li class="style4"><b><a href="../PK.htm" style="width: 212px">Потребителски кредит</a></b></li>
-			<li class="style5"><b><a href="../Cards.htm" style="width: 166px">Кредитни карти</a></b></li>
-			<li style="width: 110px" class="style6"><b><a href="../Leasing.htm">Лизинг</a></b></li>
-			<li style="width: 162px"><b><a href="criterion.htm">Кредитен рейтинг</a></b></li>
-			<li><br />
-			</li>
-		</ul>
-	</div>
-	<!-- End Navigation -->
-	<!-- Begin Page Content -->
-	<div id="page_content" style="left: 0px; top: 0px; height: 550px">
-		<!-- Begin Content -->
-		<div id="content" style="left: 0px; top: 0px; width: 841px; height: 500px;">
-			<!-- #BeginEditable "content" -->
-			<br/>
-			<h2>Имате ли доходи в домакинството :</h2>
-		
-			<form  onsubmit="event.preventDefault(); sendValue();">
+    <!-- Основно съдържание -->
+    <main class="container mb-5">
+        
+        <!-- "breadcrumb" навигация -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Начало</a></li>
+                <li class="breadcrumb-item"><a href="criterion.htm">Кредитен рейтинг</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Стъпка 11</li>
+            </ol>
+        </nav>
 
-		
-		
-		<table style="width: 100%">
-			<tr>
-				<td style="width: 162px">		<br />
-				<br />
-				<input type="radio" name="c10" value="1"/><span lang="en-us">&nbsp;
-				</span>Има<br/>
-		<input type="radio" name="c10" value="-2"/><span lang="en-us">&nbsp;
-				</span>Няма<br />
+        <!-- Въпрос -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card question-card">
+                    <div class="card-header bg-primary text-white text-center py-3">
+                        <h4 class="card-title mb-0"><i class="bi bi-house-check me-2"></i>Отношение частна собственост – дългове</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <h5 class="card-title mb-4">Какво е отношението между вашата частна собственост и дълговете?</h5>
+                        
+                        <form id="propertyForm">
+                            <!-- Опции за избор -->
+                            <div class="option-card" onclick="selectOption(1)">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="propertyOption" id="option1" value="2">
+                                    <label class="form-check-label fw-bold" for="option1">
+                                        <i class="bi bi-percent property-icon"></i>Имуществото покрива задълженията над 200%
+                                    </label>
+                                    <p class="text-muted mb-0 mt-1">Солидна финансова стабилност</p>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card" onclick="selectOption(2)">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="propertyOption" id="option2" value="1">
+                                    <label class="form-check-label fw-bold" for="option2">
+                                        <i class="bi bi-percent property-icon"></i>Имуществото покрива задълженията над 150%
+                                    </label>
+                                    <p class="text-muted mb-0 mt-1">Добра финансова стабилност</p>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card" onclick="selectOption(3)">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="propertyOption" id="option3" value="0">
+                                    <label class="form-check-label fw-bold" for="option3">
+                                        <i class="bi bi-percent property-icon"></i>Имуществото покрива задълженията над 125%
+                                    </label>
+                                    <p class="text-muted mb-0 mt-1">Стабилно финансово състояние</p>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card" onclick="selectOption(4)">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="propertyOption" id="option4" value="-1">
+                                    <label class="form-check-label fw-bold" for="option4">
+                                        <i class="bi bi-percent property-icon"></i>Имуществото покрива задълженията над 100%
+                                    </label>
+                                    <p class="text-muted mb-0 mt-1">Минимална финансова стабилност</p>
+                                </div>
+                            </div>
+                            
+                            <div class="option-card" onclick="selectOption(5)">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="propertyOption" id="option5" value="-2">
+                                    <label class="form-check-label fw-bold" for="option5">
+                                        <i class="bi bi-percent property-icon"></i>Имуществото покрива задълженията под 100%
+                                    </label>
+                                    <p class="text-muted mb-0 mt-1">Висок финансов риск</p>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <!-- Бутон за напред -->
+                        <div class="text-center mt-4">
+                            <button type="button" class="btn btn-primary btn-next" onclick="validateForm()">
+                                Следваща стъпка <i class="bi bi-arrow-right ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Допълнителна информация и изображение -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="info-section">
+                            <h6><i class="bi bi-info-circle text-primary me-2"></i>Защо ни е нужна тази информация?</h6>
+                            <p class="mb-0">Отношението между частната собственост и дълговете е ключов показател за финансовата стабилност. По-високото съотношение показва по-голяма финансова сигурност и по-нисък риск за кредитора. Ако кредитоискателят притежава собствена къща или жилище, той като цяло е по-малко склонен да поема рискове от кредитоискател, живеещ под наем.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="../images/strategies-real-estate1.jpg" alt="Илюстрация на собственост" class="img-fluid rounded" style="max-height: 200px;">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<br/>
-	
+    </main>
 
-		<input type="submit" value="next" style="width: 120px; height: 30px; background-color:#FF6600  "/>
+    <!-- Футър -->
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">
+                <a href="../index.html" class="text-light text-decoration-none">Начало</a> | 
+                <a href="../IK.htm" class="text-light text-decoration-none">Ипотечен кредит</a> | 
+                <a href="../PK.htm" class="text-light text-decoration-none">Потребителски кредит</a> | 
+                <a href="../Cards.htm" class="text-light text-decoration-none">Кредитни карти</a> | 
+                <a href="../Leasing.htm" class="text-light text-decoration-none">Лизинг</a> | 
+                <a href="criterion.htm" class="text-light text-decoration-none">Кредитен рейтинг</a> | 
+                <a href="../Contacts.htm" class="text-light text-decoration-none">Контакти</a>
+            </p>
+        </div>
+    </footer>
 
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript за функционалността -->
+    <script>
+        // Функция за избор на опция
+        function selectOption(optionNumber) {
+            // Маркиране на радио бутона
+            document.getElementById('option' + optionNumber).checked = true;
+            
+            // Премахване на селектиран стил от всички опции
+            const allOptions = document.querySelectorAll('.option-card');
+            allOptions.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Добавяне на селектиран стил към избраната опция
+            const selectedOption = document.querySelector('.option-card:nth-child(' + optionNumber + ')');
+            if (selectedOption) {
+                selectedOption.classList.add('selected');
+            }
+        }
+        
+        // Функция за валидация на формата
+        function validateForm() {
+            const selectedOption = document.querySelector('input[name="propertyOption"]:checked');
+            
+            if (!selectedOption) {
+                // Показване на съобщение за грешка
+                showError('Моля, посочете отношението между вашата собственост и дълговете преди да продължите.');
+                return;
+            }
+            
+            // Вземане на стойността от предишните страници
+            const urlParams = new URLSearchParams(window.location.search);
+            const previousValue = urlParams.get('c10') || '0';
+            
+            // Изчисляване на общия резултат
+            const totalScore = parseInt(previousValue) + parseInt(selectedOption.value);
+            
+            // Пренасочване към следващата страница
+            window.location.href = 'c11.html?c10=' + encodeURIComponent(totalScore);
+        }
 
-				</td>
-				<td><p align="justify">Един кредит се погасява от текущите доходи на кредитополучателя. Те трябва да се намират в определено претеглено съотношение към предоставения кредит.</p></td>
-			</tr>
-		</table>
-
-		
-		
-
-			<br />
-		<br />
-
-			</form>
-			
-			
-						<!-- #EndEditable --></div>
-		<!-- End Content -->
-		<!-- Begin Sidebar -->
-				<!-- End Sidebar --></div>
-	<!-- End Page Content -->
-	<!-- Begin Footer -->
-	<div id="footer" style="height: 31px">
-		<p><a href="../index.html">Начало</a> | <a href="../IK.htm">Ипотечен кредит</a> 
-		|
-		<a href="../PK.htm">Потребителски кредит</a> | <a href="../Cards.htm">
-		Кредитни карти</a> 
-		| <a href="../Leasing.htm">Лизинг</a> |
-		<a href="criterion.htm">Кредитен рейтинг</a> |
-		<a href="../Contacts.htm">Контакти</a></p>
-	</div>
-	<!-- End Footer --></div>
-<!-- End Container -->
-
-</div>
-
+        // Функция за показване на грешка
+        function showError(message) {
+            // Премахване на стари съобщения за грешка
+            const oldAlerts = document.querySelectorAll('.alert');
+            oldAlerts.forEach(alert => alert.remove());
+            
+            // Създаване на ново съобщение за грешка
+            const errorDiv = document.createElement('div');
+            errorDiv.innerHTML = `
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    <strong>${message}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+            document.querySelector('.card-body').appendChild(errorDiv);
+            
+            // Скролване към съобщението за грешка
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        // Добавяне на клавишни събития
+        document.addEventListener('keydown', function(event) {
+            if (event.key >= '1' && event.key <= '5') {
+                selectOption(parseInt(event.key));
+            } else if (event.key === 'Enter') {
+                validateForm();
+            }
+        });
+    </script>
 </body>
-
-<!-- #EndTemplate -->
-
 </html>
