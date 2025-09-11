@@ -188,7 +188,7 @@
                         <!-- Бутон за напред -->
                         <div class="text-center mt-4">
                             <button type="button" class="btn btn-primary btn-next" onclick="validateForm()">
-                                Следваща стъпка <i class="bi bi-arrow-right ms-2"></i>
+                                Изчисли <i class="bi bi-arrow-right ms-2"></i>
                             </button>
                         </div>
                     </div>
@@ -261,7 +261,7 @@
             
             // Вземане на стойността от предишните страници
             const urlParams = new URLSearchParams(window.location.search);
-            const previousValue = urlParams.get('c10') || '0';
+            const previousValue = urlParams.get('c9') || '0';
             
             // Изчисляване на общия резултат
             const totalScore = parseInt(previousValue) + parseInt(selectedOption.value);
